@@ -1,3 +1,6 @@
+*.exe
+*.Debug
+*.Release
 src/*.exe
 src/cosmoscoin
 src/cosmoscoind
