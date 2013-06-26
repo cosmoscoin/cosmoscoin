@@ -13,7 +13,7 @@
 
 // These need to be macro's, as version.cpp's voodoo requires it
 #define CLIENT_VERSION_MAJOR       0
-#define CLIENT_VERSION_MINOR       1
+#define CLIENT_VERSION_MINOR       9
 #define CLIENT_VERSION_REVISION    0
 #define CLIENT_VERSION_BUILD       0
 
