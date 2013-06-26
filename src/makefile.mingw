@@ -36,8 +36,8 @@ CFLAGS=-mthreads -O2 -w -Wall -Wextra -Wformat -Wformat-security -Wno-unused-par
 TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
 
 ifdef USE_UPNP
- INCLUDEPATHS += -I"C:\miniupnpc-1.6-mgw"
- LIBPATHS += -L"C:\miniupnpc-1.6-mgw"
+ INCLUDEPATHS += -I"E:\deps\miniupnpc-1.6"
+ LIBPATHS += -L"E:\realcoin-dev\deps\upnpc-exe-win32-20121009"
  LIBS += -l miniupnpc -l iphlpapi
  DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
 endif
