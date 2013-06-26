@@ -1556,8 +1556,8 @@ Adresse: %4
     </message>
     <message>
         <location filename="../transactiondesc.cpp" line="229"/>
-        <source>Generated coins must wait 120 blocks before they can be spent.  When you generated this block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to &quot;not accepted&quot; and not be spendable.  This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Genererte mynter må vente 120 blokker før de kan brukes.  Da du genererte denne blokken ble den kringkastet på nettverket for å bli lagt til i kjeden av blokker.  Hvis den ikke kommer med i kjeden vil den endre seg til &quot;ikke akseptert og pengene vil ikke kunne brukes.  Dette vil noen ganger skje hvis en annen node genererer en blokk noen sekunder i tid fra din egen.</translation>
+        <source>Generated coins must wait 30 blocks before they can be spent.  When you generated this block, it was broadcast to the network to be added to the block chain.  If it fails to get into the chain, it will change to &quot;not accepted&quot; and not be spendable.  This may occasionally happen if another node generates a block within a few seconds of yours.</source>
+        <translation>Genererte mynter må vente 30 blokker før de kan brukes.  Da du genererte denne blokken ble den kringkastet på nettverket for å bli lagt til i kjeden av blokker.  Hvis den ikke kommer med i kjeden vil den endre seg til &quot;ikke akseptert og pengene vil ikke kunne brukes.  Dette vil noen ganger skje hvis en annen node genererer en blokk noen sekunder i tid fra din egen.</translation>
     </message>
 </context>
 <context>
