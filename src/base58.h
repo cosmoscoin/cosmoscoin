@@ -278,7 +278,7 @@ class CCosmoscoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 35, // Floriscoin addresses start with F
+        PUBKEY_ADDRESS = 27, // Floriscoin addresses start with F
         SCRIPT_ADDRESS = 8,
         PUBKEY_ADDRESS_TEST = 115,
         SCRIPT_ADDRESS_TEST = 198,
