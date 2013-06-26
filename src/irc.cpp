@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Cosmoscoin developers
-// Copyright (c) 2011-2012 Litecoin Developers
+// Copyright (c) 2011-2012 Cosmoscoin Developers
 // Copyright (c) 2013 Cosmoscoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -298,9 +298,9 @@ void ThreadIRCSeed2(void* parg)
             Send(hSocket, "JOIN #flocoinTst\r");
             Send(hSocket, "WHO #flocoinTst\r");
         } else {
-            // randomly join #litecoin00-#litecoin99
+            // randomly join #cosmoscoin00-#cosmoscoin99
             int channel_number = GetRandInt(100);
-            channel_number = 0; // Litecoin: for now, just use one channel
+            channel_number = 0; // Cosmoscoin: for now, just use one channel
             Send(hSocket, strprintf("JOIN #cosmoscoin%02d\r", channel_number).c_str());
             Send(hSocket, strprintf("WHO #cosmoscoin%02d\r", channel_number).c_str());
         }

@@ -3,7 +3,7 @@
  *
  * W.J. van der Laan 2011-2012
  * The Cosmoscoin Developers 2011-2012
- * The Litecoin Developers 201-2013
+ * The Cosmoscoin Developers 201-2013
  */
 #include "cosmoscoingui.h"
 #include "transactiontablemodel.h"

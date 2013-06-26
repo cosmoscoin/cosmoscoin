@@ -15,7 +15,7 @@ class QAbstractItemView;
 QT_END_NAMESPACE
 class SendCoinsRecipient;
 
-/** Utility functions used by the Litecoin Qt UI.
+/** Utility functions used by the Cosmoscoin Qt UI.
  */
 namespace GUIUtil
 {
@@ -23,14 +23,14 @@ namespace GUIUtil
     QString dateTimeStr(const QDateTime &datetime);
     QString dateTimeStr(qint64 nTime);
 
-    // Render Litecoin addresses in monospace font
+    // Render Cosmoscoin addresses in monospace font
     QFont cosmoscoinAddressFont();
 
     // Set up widgets for address and amounts
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "litecoin:" URI into recipient object, return true on succesful parsing
+    // Parse "cosmoscoin:" URI into recipient object, return true on succesful parsing
     // See Cosmoscoin URI definition discussion here: https://cosmoscointalk.org/index.php?topic=33490.0
     bool parseCosmoscoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseCosmoscoinURI(QString uri, SendCoinsRecipient *out);
@@ -95,7 +95,7 @@ namespace GUIUtil
     bool GetStartOnSystemStartup();
     bool SetStartOnSystemStartup(bool fAutoStart);
 
-    /** Help message for Litecoin-Qt, shown with --help. */
+    /** Help message for Cosmoscoin-Qt, shown with --help. */
     class HelpMessageBox : public QMessageBox
     {
         Q_OBJECT
