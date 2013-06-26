@@ -833,17 +833,36 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 100 * COIN; // Cosmoscoin: 100 (Litecoin: 50)
+    int64 nSubsidy = 3 * COIN; // Cosmoscoin: 3
 
-    // Subsidy is cut in half every 800000 blocks
-    nSubsidy >>= (nHeight / 800000); // Cosmoscoin: 800k blocks in ~1 years
+    printf("===>> nHeight = %d\n", nHeight);
+
+    if(nHeight==1)
+    {
+        nSubsidy=1124776*COIN;
+    }
+    else if(nHeight <= 500)
+    {
+        nSubsidy = 0 * COIN;
+    }
+    else if(nHeight <= 1000)
+    {
+        nSubsidy = 1 * COIN;
+    }
+    else if(nHeight <= 1500)
+    {
+        nSubsidy = 2 * COIN;
+    }
+
+    // Subsidy is cut in half every 31536000 blocks
+    nSubsidy >>= (nHeight / 31536000); // Cosmoscoin: 31536000 blocks in 30 years
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 60 * 60; // Cosmoscoin: 60 minutes (Litecoin: 3.5 days)
-static const int64 nTargetSpacing = 40; // Cosmoscoin: 40 seconds (~1/4x Litecoin: 2.5 minutes)
-static const int64 nInterval = nTargetTimespan / nTargetSpacing; // Cosmoscoin: 90 blocks
+static const int64 nTargetTimespan = 100 * 30; // Cosmoscoin: 50 minutes
+static const int64 nTargetSpacing = 30; // Cosmoscoin: 30 seconds
+static const int64 nInterval = nTargetTimespan / nTargetSpacing; // Cosmoscoin: 100 blocks
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -916,10 +935,28 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
-    if (nActualTimespan < nTargetTimespan/4)
-        nActualTimespan = nTargetTimespan/4;
-    if (nActualTimespan > nTargetTimespan*4)
-        nActualTimespan = nTargetTimespan*4;
+
+    if(pindexLast->nHeight+1 > 10000)
+    {
+        if (nActualTimespan < nTargetTimespan/4)
+            nActualTimespan = nTargetTimespan/4;
+        if (nActualTimespan > nTargetTimespan*4)
+            nActualTimespan = nTargetTimespan*4;
+    }
+    else if(pindexLast->nHeight+1 > 5000)
+    {
+        if (nActualTimespan < nTargetTimespan/8)
+            nActualTimespan = nTargetTimespan/8;
+        if (nActualTimespan > nTargetTimespan*4)
+            nActualTimespan = nTargetTimespan*4;
+    }
+    else
+    {
+        if (nActualTimespan < nTargetTimespan/16)
+            nActualTimespan = nTargetTimespan/16;
+        if (nActualTimespan > nTargetTimespan*4)
+            nActualTimespan = nTargetTimespan*4;
+    }
 
     // Retarget
     CBigNum bnNew;
