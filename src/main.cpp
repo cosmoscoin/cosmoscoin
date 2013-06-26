@@ -2045,7 +2045,7 @@ bool LoadBlockIndex(bool fAllowNew)
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 0 * COIN;//genesis block is 0, normal block is 3
+        txNew.vout[0].nValue = 3 * COIN;//genesis block is 0, normal block is 3
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("0401999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999") << OP_CHECKSIG;
 		txNew.strTxComment = "text:Cosmoscoin genesis block";
         CBlock block;
