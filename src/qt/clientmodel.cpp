@@ -35,7 +35,7 @@ ClientModel::ClientModel(OptionsModel *optionsModel, QObject *parent) :
     walletdb.ReadSetting("miningPassword", str);
     miningPassword = QString::fromStdString(str);
     */
-//    if (fGenerateBitcoins)
+//    if (fGenerateCosmoscoins)
 //    {
         miningType = SoloMining;
         miningStarted = true;
@@ -163,7 +163,7 @@ int ClientModel::getHashrate() const
     return (boost::int64_t)dHashesPerSec;
 }
 
-// Litecoin: copied from bitcoinrpc.cpp.
+// Litecoin: copied from cosmoscoinrpc.cpp.
 double ClientModel::GetDifficulty() const
 {
     // Floating point number that is a multiple of the minimum difficulty,
@@ -261,7 +261,7 @@ void ClientModel::setMining(MiningType type, bool mining, int threads, int hashr
 {
     if (type == SoloMining && mining != miningStarted)
     {
-        GenerateBitcoins(mining ? 1 : 0, pwalletMain);
+        GenerateCosmoscoins(mining ? 1 : 0, pwalletMain);
     }
     miningType = type;
     miningStarted = mining;

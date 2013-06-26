@@ -1,7 +1,7 @@
 #include "guiutil.h"
-#include "bitcoinaddressvalidator.h"
+#include "cosmoscoinaddressvalidator.h"
 #include "walletmodel.h"
-#include "bitcoinunits.h"
+#include "cosmoscoinunits.h"
 #include "util.h"
 #include "init.h"
 #include "base58.h"
@@ -53,7 +53,7 @@ QString dateTimeStr(qint64 nTime)
     return dateTimeStr(QDateTime::fromTime_t((qint32)nTime));
 }
 
-QFont bitcoinAddressFont()
+QFont cosmoscoinAddressFont()
 {
     QFont font("Monospace");
     font.setStyleHint(QFont::TypeWriter);
@@ -62,9 +62,9 @@ QFont bitcoinAddressFont()
 
 void setupAddressWidget(QLineEdit *widget, QWidget *parent)
 {
-    widget->setMaxLength(BitcoinAddressValidator::MaxAddressLength);
-    widget->setValidator(new BitcoinAddressValidator(parent));
-    widget->setFont(bitcoinAddressFont());
+    widget->setMaxLength(CosmoscoinAddressValidator::MaxAddressLength);
+    widget->setValidator(new CosmoscoinAddressValidator(parent));
+    widget->setFont(cosmoscoinAddressFont());
 }
 
 void setupAmountWidget(QLineEdit *widget, QWidget *parent)
@@ -76,13 +76,13 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
     widget->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
 }
 
-bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseCosmoscoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    if(uri.scheme() != QString("florincoin"))
+    if(uri.scheme() != QString("cosmoscoin"))
         return false;
 
     // check if the address is valid
-    CBitcoinAddress addressFromUri(uri.path().toStdString());
+    CCosmoscoinAddress addressFromUri(uri.path().toStdString());
     if (!addressFromUri.IsValid())
         return false;
 
@@ -108,7 +108,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BitcoinUnits::parse(BitcoinUnits::BTC, i->second, &rv.amount))
+                if(!CosmoscoinUnits::parse(CosmoscoinUnits::BTC, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -126,18 +126,18 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
+bool parseCosmoscoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert florincoin:// to florincoin:
+    // Convert cosmoscoin:// to cosmoscoin:
     //
-    //    Cannot handle this later, because florincoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because cosmoscoin:// will cause Qt to see the part after // as host,
     //    which will lowercase it (and thus invalidate the address).
-    if(uri.startsWith("florincoin://"))
+    if(uri.startsWith("cosmoscoin://"))
     {
-        uri.replace(0, 11, "florincoin:");
+        uri.replace(0, 11, "cosmoscoin:");
     }
     QUrl uriInstance(uri);
-    return parseBitcoinURI(uriInstance, out);
+    return parseCosmoscoinURI(uriInstance, out);
 }
 
 QString HtmlEscape(const QString& str, bool fMultiLine)
@@ -278,12 +278,12 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Florincoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "Cosmoscoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Florincoin.lnk
+    // check for Cosmoscoin.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -360,7 +360,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "florincoin.desktop";
+    return GetAutostartDir() / "cosmoscoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -398,10 +398,10 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         boost::filesystem::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out|std::ios_base::trunc);
         if (!optionFile.good())
             return false;
-        // Write a florincoin.desktop file to the autostart directory:
+        // Write a cosmoscoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Florincoin\n";
+        optionFile << "Name=Cosmoscoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -422,10 +422,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("Florincoin-Qt") + " " + tr("version") + " " +
+    header = tr("Cosmoscoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  florincoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  cosmoscoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -434,7 +434,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("Florincoin-Qt"));
+    setWindowTitle(tr("Cosmoscoin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in nonbreaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));

@@ -1,9 +1,9 @@
-Building Florincoin
+Building Cosmoscoin
 
-See doc/readme-qt.rst for instructions on building Florincoin-QT,
+See doc/readme-qt.rst for instructions on building Cosmoscoin-QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Florincoin.
+implementation of Cosmoscoin.
 
-See doc/build-*.txt for instructions on building florincoind,
+See doc/build-*.txt for instructions on building cosmoscoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Florincoin.
+implementation of Cosmoscoin.

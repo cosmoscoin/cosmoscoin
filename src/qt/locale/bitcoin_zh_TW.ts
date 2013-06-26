@@ -4,24 +4,24 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
-        <source>About Florincoin</source>
+        <source>About Cosmoscoin</source>
         <translation>關於位元幣</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="53"/>
-        <source>&lt;b&gt;Florincoin&lt;/b&gt; version</source>
+        <source>&lt;b&gt;Cosmoscoin&lt;/b&gt; version</source>
         <translation>&lt;b&gt;位元幣&lt;/b&gt;版本</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="97"/>
-        <source>Copyright © 2009-2012 Bitcoin Developers
+        <source>Copyright © 2009-2012 Cosmoscoin Developers
 
 This is experimental software.
 
 Distributed under the MIT/X11 software license, see the accompanying file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
-        <translation>版權為 Bitcoin 開發人員自西元 2009 至 2012 年起所有
+        <translation>版權為 Cosmoscoin 開發人員自西元 2009 至 2012 年起所有
 
 這是個實驗性的軟體.
 
@@ -39,7 +39,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="20"/>
-        <source>These are your Florincoin addresses for receiving payments.  You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your Cosmoscoin addresses for receiving payments.  You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>這是你用來收款的位元幣位址. 你可以提供不同的位址給不同的付款人, 來追蹤是誰支付給你.</translation>
     </message>
     <message>
@@ -210,7 +210,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="101"/>
-        <source>WARNING: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FLORINCOINS&lt;/b&gt;!
+        <source>WARNING: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR CMCRINCOINS&lt;/b&gt;!
 Are you sure you wish to encrypt your wallet?</source>
         <translation>警告: 如果將錢包加密後忘記密碼, 你會&lt;b&gt;失去其中所有的位元幣&lt;/b&gt;!
 你確定要將錢包加密嗎?</translation>
@@ -223,7 +223,7 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="111"/>
-        <source>Florincoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your florincoins from being stolen by malware infecting your computer.</source>
+        <source>Cosmoscoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your cosmoscoins from being stolen by malware infecting your computer.</source>
         <translation>位元幣現在要關閉以完成加密程序. 請記住, 加密錢包無法完全防止入侵電腦的惡意程式偷取你的位元幣.</translation>
     </message>
     <message>
@@ -275,301 +275,301 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>CosmoscoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="73"/>
-        <source>Florincoin Wallet</source>
+        <location filename="../cosmoscoingui.cpp" line="73"/>
+        <source>Cosmoscoin Wallet</source>
         <translation>位元幣錢包</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="215"/>
+        <location filename="../cosmoscoingui.cpp" line="215"/>
         <source>Sign &amp;message...</source>
         <translation>訊息簽署...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="248"/>
-        <source>Show/Hide &amp;Florincoin</source>
+        <location filename="../cosmoscoingui.cpp" line="248"/>
+        <source>Show/Hide &amp;Cosmoscoin</source>
         <translation>顯示/隱藏位元幣</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="515"/>
+        <location filename="../cosmoscoingui.cpp" line="515"/>
         <source>Synchronizing with network...</source>
         <translation>網路同步中...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="185"/>
+        <location filename="../cosmoscoingui.cpp" line="185"/>
         <source>&amp;Overview</source>
         <translation>總覽</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="186"/>
+        <location filename="../cosmoscoingui.cpp" line="186"/>
         <source>Show general overview of wallet</source>
         <translation>顯示錢包一般總覽</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="191"/>
+        <location filename="../cosmoscoingui.cpp" line="191"/>
         <source>&amp;Transactions</source>
         <translation>交易</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="192"/>
+        <location filename="../cosmoscoingui.cpp" line="192"/>
         <source>Browse transaction history</source>
         <translation>瀏覽交易紀錄</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="197"/>
+        <location filename="../cosmoscoingui.cpp" line="197"/>
         <source>&amp;Address Book</source>
         <translation>位址簿</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="198"/>
+        <location filename="../cosmoscoingui.cpp" line="198"/>
         <source>Edit the list of stored addresses and labels</source>
         <translation>編輯儲存位址與標記的列表</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="203"/>
+        <location filename="../cosmoscoingui.cpp" line="203"/>
         <source>&amp;Receive coins</source>
         <translation>收錢</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="204"/>
+        <location filename="../cosmoscoingui.cpp" line="204"/>
         <source>Show the list of addresses for receiving payments</source>
         <translation>顯示收款位址的列表</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="209"/>
+        <location filename="../cosmoscoingui.cpp" line="209"/>
         <source>&amp;Send coins</source>
         <translation>付錢</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="216"/>
+        <location filename="../cosmoscoingui.cpp" line="216"/>
         <source>Prove you control an address</source>
         <translation>證明你控制一個位址</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="235"/>
+        <location filename="../cosmoscoingui.cpp" line="235"/>
         <source>E&amp;xit</source>
         <translation>結束</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="236"/>
+        <location filename="../cosmoscoingui.cpp" line="236"/>
         <source>Quit application</source>
         <translation>結束應用程式</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="239"/>
+        <location filename="../cosmoscoingui.cpp" line="239"/>
         <source>&amp;About %1</source>
         <translation>關於%1</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="240"/>
-        <source>Show information about Florincoin</source>
+        <location filename="../cosmoscoingui.cpp" line="240"/>
+        <source>Show information about Cosmoscoin</source>
         <translation>顯示位元幣相關資訊</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="242"/>
+        <location filename="../cosmoscoingui.cpp" line="242"/>
         <source>About &amp;Qt</source>
         <translation>關於 &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="243"/>
+        <location filename="../cosmoscoingui.cpp" line="243"/>
         <source>Show information about Qt</source>
         <translation>顯示有關於 Qt 的資訊</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="245"/>
+        <location filename="../cosmoscoingui.cpp" line="245"/>
         <source>&amp;Options...</source>
         <translation>選項...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="252"/>
+        <location filename="../cosmoscoingui.cpp" line="252"/>
         <source>&amp;Encrypt Wallet...</source>
         <translation>錢包加密...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="255"/>
+        <location filename="../cosmoscoingui.cpp" line="255"/>
         <source>&amp;Backup Wallet...</source>
         <translation>錢包備份...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="257"/>
+        <location filename="../cosmoscoingui.cpp" line="257"/>
         <source>&amp;Change Passphrase...</source>
         <translation>密碼變更...</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="517"/>
+        <location filename="../cosmoscoingui.cpp" line="517"/>
         <source>~%n block(s) remaining</source>
         <translation><numerusform>剩下 ~%n 個區塊</numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="528"/>
+        <location filename="../cosmoscoingui.cpp" line="528"/>
         <source>Downloaded %1 of %2 blocks of transaction history (%3% done).</source>
         <translation>已下載了全部 %2 個中的 %1 個交易紀錄區塊 (已完成 %3%).</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="250"/>
+        <location filename="../cosmoscoingui.cpp" line="250"/>
         <source>&amp;Export...</source>
         <translation>匯出...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="210"/>
-        <source>Send coins to a Florincoin address</source>
+        <location filename="../cosmoscoingui.cpp" line="210"/>
+        <source>Send coins to a Cosmoscoin address</source>
         <translation>付錢到一個位元幣位址</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="246"/>
-        <source>Modify configuration options for Florincoin</source>
+        <location filename="../cosmoscoingui.cpp" line="246"/>
+        <source>Modify configuration options for Cosmoscoin</source>
         <translation>修改位元幣的設定選項</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="249"/>
-        <source>Show or hide the Florincoin window</source>
+        <location filename="../cosmoscoingui.cpp" line="249"/>
+        <source>Show or hide the Cosmoscoin window</source>
         <translation>顯示或隱藏位元幣的視窗</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="251"/>
+        <location filename="../cosmoscoingui.cpp" line="251"/>
         <source>Export the data in the current tab to a file</source>
         <translation>將目前分頁的資料匯出存成檔案</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="253"/>
+        <location filename="../cosmoscoingui.cpp" line="253"/>
         <source>Encrypt or decrypt wallet</source>
         <translation>將錢包加解密</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="256"/>
+        <location filename="../cosmoscoingui.cpp" line="256"/>
         <source>Backup wallet to another location</source>
         <translation>將錢包備份到其它地方</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="258"/>
+        <location filename="../cosmoscoingui.cpp" line="258"/>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>變更錢包加密用的密碼</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="259"/>
+        <location filename="../cosmoscoingui.cpp" line="259"/>
         <source>&amp;Debug window</source>
         <translation>除錯視窗</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="260"/>
+        <location filename="../cosmoscoingui.cpp" line="260"/>
         <source>Open debugging and diagnostic console</source>
         <translation>開啓除錯與診斷主控台</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="261"/>
+        <location filename="../cosmoscoingui.cpp" line="261"/>
         <source>&amp;Verify message...</source>
         <translation>訊息驗證...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="262"/>
+        <location filename="../cosmoscoingui.cpp" line="262"/>
         <source>Verify a message signature</source>
         <translation>驗證訊息簽章</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="286"/>
+        <location filename="../cosmoscoingui.cpp" line="286"/>
         <source>&amp;File</source>
         <translation>檔案</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="296"/>
+        <location filename="../cosmoscoingui.cpp" line="296"/>
         <source>&amp;Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="302"/>
+        <location filename="../cosmoscoingui.cpp" line="302"/>
         <source>&amp;Help</source>
         <translation>求助</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="311"/>
+        <location filename="../cosmoscoingui.cpp" line="311"/>
         <source>Tabs toolbar</source>
         <translation>分頁工具列</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="322"/>
+        <location filename="../cosmoscoingui.cpp" line="322"/>
         <source>Actions toolbar</source>
         <translation>動作工具列</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="334"/>
-        <location filename="../bitcoingui.cpp" line="343"/>
+        <location filename="../cosmoscoingui.cpp" line="334"/>
+        <location filename="../cosmoscoingui.cpp" line="343"/>
         <source>[testnet]</source>
         <translation>[testnet]</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="343"/>
-        <location filename="../bitcoingui.cpp" line="399"/>
-        <source>Florincoin client</source>
+        <location filename="../cosmoscoingui.cpp" line="343"/>
+        <location filename="../cosmoscoingui.cpp" line="399"/>
+        <source>Cosmoscoin client</source>
         <translation>位元幣客戶軟體</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="492"/>
-        <source>%n active connection(s) to Florincoin network</source>
+        <location filename="../cosmoscoingui.cpp" line="492"/>
+        <source>%n active connection(s) to Cosmoscoin network</source>
         <translation><numerusform>與位元幣網路有 %n 個連線在使用中</numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="540"/>
+        <location filename="../cosmoscoingui.cpp" line="540"/>
         <source>Downloaded %1 blocks of transaction history.</source>
         <translation>已下載了 %1 個交易紀錄的區塊.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="555"/>
+        <location filename="../cosmoscoingui.cpp" line="555"/>
         <source>%n second(s) ago</source>
         <translation><numerusform>%n 秒鐘前</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="559"/>
+        <location filename="../cosmoscoingui.cpp" line="559"/>
         <source>%n minute(s) ago</source>
         <translation><numerusform>%n 分鐘前</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="563"/>
+        <location filename="../cosmoscoingui.cpp" line="563"/>
         <source>%n hour(s) ago</source>
         <translation><numerusform>%n 小時前</numerusform></translation>
     </message>
     <message numerus="yes">
-        <location filename="../bitcoingui.cpp" line="567"/>
+        <location filename="../cosmoscoingui.cpp" line="567"/>
         <source>%n day(s) ago</source>
         <translation><numerusform>%n 天前</numerusform></translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="573"/>
+        <location filename="../cosmoscoingui.cpp" line="573"/>
         <source>Up to date</source>
         <translation>最新狀態</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="580"/>
+        <location filename="../cosmoscoingui.cpp" line="580"/>
         <source>Catching up...</source>
         <translation>進度追趕中...</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="590"/>
+        <location filename="../cosmoscoingui.cpp" line="590"/>
         <source>Last received block was generated %1.</source>
         <translation>最近收到的區塊產生於 %1.</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="649"/>
+        <location filename="../cosmoscoingui.cpp" line="649"/>
         <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
         <translation>這筆交易的資料大小超過限制了. 你還是可以付出 %1 的費用來傳送. 這筆費用會付給處理該筆交易的節點, 並幫助維持整個網路. 你願意支付這項費用嗎?</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="654"/>
+        <location filename="../cosmoscoingui.cpp" line="654"/>
         <source>Confirm transaction fee</source>
         <translation>確認交易手續費</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="681"/>
+        <location filename="../cosmoscoingui.cpp" line="681"/>
         <source>Sent transaction</source>
         <translation>付款交易</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="682"/>
+        <location filename="../cosmoscoingui.cpp" line="682"/>
         <source>Incoming transaction</source>
         <translation>收款交易</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="683"/>
+        <location filename="../cosmoscoingui.cpp" line="683"/>
         <source>Date: %1
 Amount: %2
 Type: %3
@@ -581,38 +581,38 @@ Address: %4
 位址: %4</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="804"/>
+        <location filename="../cosmoscoingui.cpp" line="804"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>錢包&lt;b&gt;已加密&lt;/b&gt;並且正&lt;b&gt;解鎖中&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="812"/>
+        <location filename="../cosmoscoingui.cpp" line="812"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>錢包&lt;b&gt;已加密&lt;/b&gt;並且正&lt;b&gt;上鎖中&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="835"/>
+        <location filename="../cosmoscoingui.cpp" line="835"/>
         <source>Backup Wallet</source>
         <translation>錢包備份</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="835"/>
+        <location filename="../cosmoscoingui.cpp" line="835"/>
         <source>Wallet Data (*.dat)</source>
         <translation>錢包資料檔 (*.dat)</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="838"/>
+        <location filename="../cosmoscoingui.cpp" line="838"/>
         <source>Backup Failed</source>
         <translation>備份失敗</translation>
     </message>
     <message>
-        <location filename="../bitcoingui.cpp" line="838"/>
+        <location filename="../cosmoscoingui.cpp" line="838"/>
         <source>There was an error trying to save the wallet data to the new location.</source>
         <translation>儲存錢包資料到新的地方時發生錯誤</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="112"/>
-        <source>A fatal error occured. Florincoin can no longer continue safely and will quit.</source>
+        <location filename="../cosmoscoin.cpp" line="112"/>
+        <source>A fatal error occured. Cosmoscoin can no longer continue safely and will quit.</source>
         <translation>發生了致命的錯誤. 位元幣程式將無法繼續安全執行, 只好結束.</translation>
     </message>
 </context>
@@ -638,7 +638,7 @@ Address: %4
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="263"/>
-        <source>The user interface language can be set here. This setting will only take effect after restarting Florincoin.</source>
+        <source>The user interface language can be set here. This setting will only take effect after restarting Cosmoscoin.</source>
         <translation>可以在這裡設定使用者介面的語言. 這個設定在位元幣程式重啓後才會生效.</translation>
     </message>
     <message>
@@ -663,7 +663,7 @@ Address: %4
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="285"/>
-        <source>Whether to show Florincoin addresses in the transaction list</source>
+        <source>Whether to show Cosmoscoin addresses in the transaction list</source>
         <translation>是否要在交易列表中顯示位元幣位址</translation>
     </message>
     <message>
@@ -673,7 +673,7 @@ Address: %4
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="303"/>
-        <source>This setting will take effect after restarting Florincoin.</source>
+        <source>This setting will take effect after restarting Cosmoscoin.</source>
         <translation>這個設定會在位元幣程式重啓後生效.</translation>
     </message>
 </context>
@@ -731,7 +731,7 @@ Address: %4
     </message>
     <message>
         <location filename="../editaddressdialog.cpp" line="96"/>
-        <source>The entered address &quot;%1&quot; is not a valid Florincoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Cosmoscoin address.</source>
         <translation>輸入的位址 &quot;%1&quot; 並不是有效的位元幣位址.</translation>
     </message>
     <message>
@@ -748,44 +748,44 @@ Address: %4
 <context>
     <name>HelpMessageBox</name>
     <message>
-        <location filename="../bitcoin.cpp" line="133"/>
-        <location filename="../bitcoin.cpp" line="143"/>
-        <source>Florincoin-Qt</source>
+        <location filename="../cosmoscoin.cpp" line="133"/>
+        <location filename="../cosmoscoin.cpp" line="143"/>
+        <source>Cosmoscoin-Qt</source>
         <translation>位元幣-Qt</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="133"/>
+        <location filename="../cosmoscoin.cpp" line="133"/>
         <source>version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="135"/>
+        <location filename="../cosmoscoin.cpp" line="135"/>
         <source>Usage:</source>
         <translation>用法:</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="136"/>
+        <location filename="../cosmoscoin.cpp" line="136"/>
         <source>options</source>
         <translation>選項</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="138"/>
+        <location filename="../cosmoscoin.cpp" line="138"/>
         <source>UI options</source>
         <translation>使用界面選項</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="139"/>
+        <location filename="../cosmoscoin.cpp" line="139"/>
         <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
         <translation>設定語言, 比如說 &quot;de_DE&quot; (預設: 系統語系)</translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="140"/>
+        <location filename="../cosmoscoin.cpp" line="140"/>
         <source>Start minimized</source>
         <translation>啓動時最小化
 </translation>
     </message>
     <message>
-        <location filename="../bitcoin.cpp" line="141"/>
+        <location filename="../cosmoscoin.cpp" line="141"/>
         <source>Show splash screen on startup (default: 1)</source>
         <translation>顯示啓動畫面 (預設: 1)</translation>
     </message>
@@ -814,12 +814,12 @@ Address: %4
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="222"/>
-        <source>&amp;Start Florincoin on system login</source>
+        <source>&amp;Start Cosmoscoin on system login</source>
         <translation>系統登入時啟動位元幣</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="223"/>
-        <source>Automatically start Florincoin after logging in to the system</source>
+        <source>Automatically start Cosmoscoin after logging in to the system</source>
         <translation>在登入系統後自動啓動位元幣</translation>
     </message>
     <message>
@@ -907,7 +907,7 @@ Address: %4
     </message>
     <message>
         <location filename="../messagepage.cpp" line="30"/>
-        <source>Enter a Florincoin address (e.g. FShM3UpgFZnXzJ5zux1AWQvAE36rFJKMs7)</source>
+        <source>Enter a Cosmoscoin address (e.g. FShM3UpgFZnXzJ5zux1AWQvAE36rFJKMs7)</source>
         <translation>輸入位元幣位址 (比如說 FShM3UpgFZnXzJ5zux1AWQvAE36rFJKMs7)</translation>
     </message>
     <message>
@@ -953,8 +953,8 @@ Address: %4
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="348"/>
-        <source>Automatically open the Florincoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自動在路由器上開啟 Florincoin 的客戶端通訊埠. 只有在你的路由器支援 UPnP 且開啟時才有作用.</translation>
+        <source>Automatically open the Cosmoscoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自動在路由器上開啟 Cosmoscoin 的客戶端通訊埠. 只有在你的路由器支援 UPnP 且開啟時才有作用.</translation>
     </message>
     <message>
         <location filename="../optionsdialog.cpp" line="351"/>
@@ -1005,7 +1005,7 @@ Address: %4
     <message>
         <location filename="../forms/overviewpage.ui" line="47"/>
         <location filename="../forms/overviewpage.ui" line="204"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Florincoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Cosmoscoin network after a connection is established, but this process has not completed yet.</source>
         <translation>顯示的資訊可能是過期的. 與位元幣網路的連線建立後, 你的錢包會自動和網路同步, 但這個步驟還沒完成.</translation>
     </message>
     <message>
@@ -1122,7 +1122,7 @@ Address: %4
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Florincoin debug window</source>
+        <source>Cosmoscoin debug window</source>
         <translation>位元幣除錯視窗</translation>
     </message>
     <message>
@@ -1205,7 +1205,7 @@ Address: %4
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="299"/>
-        <source>Open the Florincoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</source>
+        <source>Open the Cosmoscoin debug logfile from the current data directory. This can take a few seconds for large logfiles.</source>
         <translation>從目前的資料目錄下開啓位元幣的除錯紀錄檔. 當紀錄檔很大時可能要花好幾秒的時間.</translation>
     </message>
     <message>
@@ -1230,7 +1230,7 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="212"/>
-        <source>Welcome to the Florincoin RPC console.</source>
+        <source>Welcome to the Cosmoscoin RPC console.</source>
         <translation>歡迎使用位元幣 RPC 主控台.</translation>
     </message>
     <message>
@@ -1414,7 +1414,7 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="26"/>
-        <source>Enter a Florincoin address (e.g. FShM3UpgFZnXzJ5zux1AWQvAE36rFJKMs7)</source>
+        <source>Enter a Cosmoscoin address (e.g. FShM3UpgFZnXzJ5zux1AWQvAE36rFJKMs7)</source>
         <translation>輸入位元幣位址 (比如說 FShM3UpgFZnXzJ5zux1AWQvAE36rFJKMs7)</translation>
     </message>
 </context>
@@ -1863,12 +1863,12 @@ Address: %4
     </message>
     <message>
         <location filename="../forms/verifymessagedialog.ui" line="20"/>
-        <source>Enter the message and signature below (be careful to correctly copy newlines, spaces, tabs and other invisible characters) to obtain the Florincoin address used to sign the message.</source>
+        <source>Enter the message and signature below (be careful to correctly copy newlines, spaces, tabs and other invisible characters) to obtain the Cosmoscoin address used to sign the message.</source>
         <translation>請在下面輸入訊息與簽章(有些字元是看不到的, 如換行, 空格, 跳位符號等, 請小心並正確地複製), 以獲知用來簽署該訊息的位元幣位址.</translation>
     </message>
     <message>
         <location filename="../forms/verifymessagedialog.ui" line="62"/>
-        <source>Verify a message and obtain the Florincoin address used to sign the message</source>
+        <source>Verify a message and obtain the Cosmoscoin address used to sign the message</source>
         <translation>驗證一則訊息, 並獲知用來簽署該訊息的位元幣位址</translation>
     </message>
     <message>
@@ -1898,7 +1898,7 @@ Address: %4
     </message>
     <message>
         <location filename="../verifymessagedialog.cpp" line="28"/>
-        <source>Enter Florincoin signature</source>
+        <source>Enter Cosmoscoin signature</source>
         <translation>輸入位元幣簽章</translation>
     </message>
     <message>
@@ -1970,536 +1970,536 @@ Address: %4
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>cosmoscoin-core</name>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="43"/>
-        <source>Florincoin version</source>
+        <location filename="../cosmoscoinstrings.cpp" line="43"/>
+        <source>Cosmoscoin version</source>
         <translation>位元幣版本</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="44"/>
+        <location filename="../cosmoscoinstrings.cpp" line="44"/>
         <source>Usage:</source>
         <translation>用法:</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="45"/>
-        <source>Send command to -server or bitcoind</source>
-        <translation>送指令至 -server 或 bitcoind
+        <location filename="../cosmoscoinstrings.cpp" line="45"/>
+        <source>Send command to -server or cosmoscoind</source>
+        <translation>送指令至 -server 或 cosmoscoind
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="46"/>
+        <location filename="../cosmoscoinstrings.cpp" line="46"/>
         <source>List commands</source>
         <translation>列出指令
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="47"/>
+        <location filename="../cosmoscoinstrings.cpp" line="47"/>
         <source>Get help for a command</source>
         <translation>取得指令說明
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="49"/>
+        <location filename="../cosmoscoinstrings.cpp" line="49"/>
         <source>Options:</source>
         <translation>選項:
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="50"/>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>指定設定檔 (預設: bitcoin.conf)
+        <location filename="../cosmoscoinstrings.cpp" line="50"/>
+        <source>Specify configuration file (default: cosmoscoin.conf)</source>
+        <translation>指定設定檔 (預設: cosmoscoin.conf)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="51"/>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>指定行程識別碼檔案 (預設: bitcoind.pid)
+        <location filename="../cosmoscoinstrings.cpp" line="51"/>
+        <source>Specify pid file (default: cosmoscoind.pid)</source>
+        <translation>指定行程識別碼檔案 (預設: cosmoscoind.pid)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="52"/>
+        <location filename="../cosmoscoinstrings.cpp" line="52"/>
         <source>Generate coins</source>
         <translation>生產位元幣
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="53"/>
+        <location filename="../cosmoscoinstrings.cpp" line="53"/>
         <source>Don&apos;t generate coins</source>
         <translation>不生產位元幣
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="54"/>
+        <location filename="../cosmoscoinstrings.cpp" line="54"/>
         <source>Specify data directory</source>
         <translation>指定資料目錄
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="55"/>
+        <location filename="../cosmoscoinstrings.cpp" line="55"/>
         <source>Set database cache size in megabytes (default: 25)</source>
         <translation>設定資料庫快取大小為多少百萬位元組(MB, 預設: 25)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="56"/>
+        <location filename="../cosmoscoinstrings.cpp" line="56"/>
         <source>Set database disk log size in megabytes (default: 100)</source>
         <translation>設定資料庫的磁碟紀錄大小為多少百萬位元組(MB, 預設: 100)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="57"/>
+        <location filename="../cosmoscoinstrings.cpp" line="57"/>
         <source>Specify connection timeout (in milliseconds)</source>
         <translation>指定連線逾時時間 (毫秒)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="63"/>
+        <location filename="../cosmoscoinstrings.cpp" line="63"/>
         <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
         <translation>在通訊埠 &lt;port&gt; 聽候連線 (預設: 8333, 或若為測試網路: 18333)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="64"/>
+        <location filename="../cosmoscoinstrings.cpp" line="64"/>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
         <translation>維持與節點連線數的上限為 &lt;n&gt; 個 (預設: 125)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="66"/>
+        <location filename="../cosmoscoinstrings.cpp" line="66"/>
         <source>Connect only to the specified node</source>
         <translation>只連線至指定節點
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="67"/>
+        <location filename="../cosmoscoinstrings.cpp" line="67"/>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>連線到某個節點以取得其它節點的位址, 然後斷線</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="68"/>
+        <location filename="../cosmoscoinstrings.cpp" line="68"/>
         <source>Specify your own public address</source>
         <translation>指定自己公開的位址</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="69"/>
+        <location filename="../cosmoscoinstrings.cpp" line="69"/>
         <source>Only connect to nodes in network &lt;net&gt; (IPv4 or IPv6)</source>
         <translation>只和 &lt;net&gt; 網路上的節點連線 (IPv4 或 IPv6)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="70"/>
+        <location filename="../cosmoscoinstrings.cpp" line="70"/>
         <source>Try to discover public IP address (default: 1)</source>
         <translation>試著找出公開的網際網路位址 (預設: 1)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="73"/>
+        <location filename="../cosmoscoinstrings.cpp" line="73"/>
         <source>Bind to given address. Use [host]:port notation for IPv6</source>
         <translation>與指定的位址繫結. IPv6 要使用 [主機]:通訊埠 的格式</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="75"/>
+        <location filename="../cosmoscoinstrings.cpp" line="75"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
         <translation>與亂搞的節點斷線的臨界值 (預設: 100)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="76"/>
+        <location filename="../cosmoscoinstrings.cpp" line="76"/>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
         <translation>避免與亂搞的節點連線的秒數 (預設: 86400)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="79"/>
+        <location filename="../cosmoscoinstrings.cpp" line="79"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 10000)</source>
         <translation>每個連線的接收緩衝區大小上限為 &lt;n&gt;*1000 位元組 (預設: 10000)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="80"/>
+        <location filename="../cosmoscoinstrings.cpp" line="80"/>
         <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 10000)</source>
         <translation>每個連線的傳送緩衝區大小上限為 &lt;n&gt;*1000 位元組 (預設: 10000)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="83"/>
+        <location filename="../cosmoscoinstrings.cpp" line="83"/>
         <source>Detach block and address databases. Increases shutdown time (default: 0)</source>
         <translation>卸載區塊與位址的資料庫. 會延長關閉時間 (預設: 0)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="86"/>
+        <location filename="../cosmoscoinstrings.cpp" line="86"/>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>接受命令列與 JSON-RPC 指令
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="87"/>
+        <location filename="../cosmoscoinstrings.cpp" line="87"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation>以背景程式執行並接受指令</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="88"/>
+        <location filename="../cosmoscoinstrings.cpp" line="88"/>
         <source>Use the test network</source>
         <translation>使用測試網路
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="89"/>
+        <location filename="../cosmoscoinstrings.cpp" line="89"/>
         <source>Output extra debugging information</source>
         <translation>輸出額外的除錯資訊</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="90"/>
+        <location filename="../cosmoscoinstrings.cpp" line="90"/>
         <source>Prepend debug output with timestamp</source>
         <translation>在除錯輸出內容前附加時間</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="91"/>
+        <location filename="../cosmoscoinstrings.cpp" line="91"/>
         <source>Send trace/debug info to console instead of debug.log file</source>
         <translation>輸出追蹤或除錯資訊至終端機, 而非 debug.log 檔案</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="92"/>
+        <location filename="../cosmoscoinstrings.cpp" line="92"/>
         <source>Send trace/debug info to debugger</source>
         <translation>輸出追蹤或除錯資訊給除錯器</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="93"/>
+        <location filename="../cosmoscoinstrings.cpp" line="93"/>
         <source>Username for JSON-RPC connections</source>
         <translation>JSON-RPC 連線使用者名稱</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="94"/>
+        <location filename="../cosmoscoinstrings.cpp" line="94"/>
         <source>Password for JSON-RPC connections</source>
         <translation>JSON-RPC 連線密碼</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="95"/>
+        <location filename="../cosmoscoinstrings.cpp" line="95"/>
         <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8332)</source>
         <translation>在通訊埠 &lt;port&gt; 聽候 JSON-RPC 連線 (預設: 8332)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="96"/>
+        <location filename="../cosmoscoinstrings.cpp" line="96"/>
         <source>Allow JSON-RPC connections from specified IP address</source>
         <translation>只允許從指定網路位址來的 JSON-RPC 連線</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="97"/>
+        <location filename="../cosmoscoinstrings.cpp" line="97"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
         <translation>送指令給在 &lt;ip&gt; 的節點 (預設: 127.0.0.1)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="98"/>
+        <location filename="../cosmoscoinstrings.cpp" line="98"/>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
         <translation>當最新區塊改變時所要執行的指令 (指令中的 %s 會被取代為區塊的雜湊值)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="101"/>
+        <location filename="../cosmoscoinstrings.cpp" line="101"/>
         <source>Upgrade wallet to latest format</source>
         <translation>將錢包升級成最新的格式</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="102"/>
+        <location filename="../cosmoscoinstrings.cpp" line="102"/>
         <source>Set key pool size to &lt;n&gt; (default: 100)</source>
         <translation>設定密鑰池大小為 &lt;n&gt; (預設: 100)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="103"/>
+        <location filename="../cosmoscoinstrings.cpp" line="103"/>
         <source>Rescan the block chain for missing wallet transactions</source>
         <translation>重新掃描區塊鎖鏈, 以尋找錢包所遺漏的交易.</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="104"/>
+        <location filename="../cosmoscoinstrings.cpp" line="104"/>
         <source>How many blocks to check at startup (default: 2500, 0 = all)</source>
         <translation>啓動時檢查多少區塊 (預設: 2500, 0 表示全部)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="105"/>
+        <location filename="../cosmoscoinstrings.cpp" line="105"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
         <translation>區塊檢查的仔細程度 (0 至 6, 預設: 1)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="106"/>
+        <location filename="../cosmoscoinstrings.cpp" line="106"/>
         <source>Imports blocks from external blk000?.dat file</source>
         <translation>從外來的區塊檔 blk000?.dat 匯入區塊</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="108"/>
+        <location filename="../cosmoscoinstrings.cpp" line="108"/>
         <source>
-SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
+SSL options: (see the Cosmoscoin Wiki for SSL setup instructions)</source>
         <translation>
-SSL 選項: (SSL 設定程序請見 Bitcoin Wiki)
+SSL 選項: (SSL 設定程序請見 Cosmoscoin Wiki)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="111"/>
+        <location filename="../cosmoscoinstrings.cpp" line="111"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
         <translation>使用 OpenSSL (https) 於JSON-RPC 連線
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="112"/>
+        <location filename="../cosmoscoinstrings.cpp" line="112"/>
         <source>Server certificate file (default: server.cert)</source>
         <translation>伺服器憑證檔 (預設: server.cert)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="113"/>
+        <location filename="../cosmoscoinstrings.cpp" line="113"/>
         <source>Server private key (default: server.pem)</source>
         <translation>伺服器密鑰檔 (預設: server.pem)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="114"/>
+        <location filename="../cosmoscoinstrings.cpp" line="114"/>
         <source>Acceptable ciphers (default: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)</source>
         <translation>可以接受的加密法 (預設: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="145"/>
+        <location filename="../cosmoscoinstrings.cpp" line="145"/>
         <source>Warning: Disk space is low</source>
         <translation>警告: 磁碟空間很少</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="107"/>
+        <location filename="../cosmoscoinstrings.cpp" line="107"/>
         <source>This help message</source>
         <translation>此協助訊息
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="121"/>
-        <source>Cannot obtain a lock on data directory %s.  Florincoin is probably already running.</source>
+        <location filename="../cosmoscoinstrings.cpp" line="121"/>
+        <source>Cannot obtain a lock on data directory %s.  Cosmoscoin is probably already running.</source>
         <translation>無法鎖定資料目錄 %s. 也許位元幣已經在執行了.</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="48"/>
-        <source>Florincoin</source>
+        <location filename="../cosmoscoinstrings.cpp" line="48"/>
+        <source>Cosmoscoin</source>
         <translation>位元幣</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="30"/>
+        <location filename="../cosmoscoinstrings.cpp" line="30"/>
         <source>Unable to bind to %s on this computer (bind returned error %d, %s)</source>
         <translation>無法和這台電腦上的 %s 繫結 (繫結回傳錯誤 %d, %s)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="58"/>
+        <location filename="../cosmoscoinstrings.cpp" line="58"/>
         <source>Connect through socks proxy</source>
         <translation>透過 SOCKS 代理伺服器連線</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="59"/>
+        <location filename="../cosmoscoinstrings.cpp" line="59"/>
         <source>Select the version of socks proxy to use (4 or 5, 5 is default)</source>
         <translation>選擇 SOCKS 代理伺服器的協定版本(4 或 5, 預設是 5)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="60"/>
+        <location filename="../cosmoscoinstrings.cpp" line="60"/>
         <source>Do not use proxy for connections to network &lt;net&gt; (IPv4 or IPv6)</source>
         <translation>不透過 SOCKS 代理伺服器連線至 &lt;net&gt; 網路 (IPv4 或 IPv6)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="61"/>
+        <location filename="../cosmoscoinstrings.cpp" line="61"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>允許對 -addnode, -seednode, -connect 的參數使用域名查詢 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="62"/>
+        <location filename="../cosmoscoinstrings.cpp" line="62"/>
         <source>Pass DNS requests to (SOCKS5) proxy</source>
         <translation>透過 (SOCKS5) 代理伺服器送出域名查詢</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="142"/>
+        <location filename="../cosmoscoinstrings.cpp" line="142"/>
         <source>Loading addresses...</source>
         <translation>載入位址中...</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="132"/>
+        <location filename="../cosmoscoinstrings.cpp" line="132"/>
         <source>Error loading blkindex.dat</source>
         <translation>載入 blkindex.dat 失敗</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="134"/>
+        <location filename="../cosmoscoinstrings.cpp" line="134"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
         <translation>載入檔案 wallet.dat 失敗: 錢包壞掉了</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="135"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Florincoin</source>
-        <translation>載入檔案 wallet.dat 失敗: 此錢包需要新版的 Florincoin</translation>
+        <location filename="../cosmoscoinstrings.cpp" line="135"/>
+        <source>Error loading wallet.dat: Wallet requires newer version of Cosmoscoin</source>
+        <translation>載入檔案 wallet.dat 失敗: 此錢包需要新版的 Cosmoscoin</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="136"/>
-        <source>Wallet needed to be rewritten: restart Florincoin to complete</source>
+        <location filename="../cosmoscoinstrings.cpp" line="136"/>
+        <source>Wallet needed to be rewritten: restart Cosmoscoin to complete</source>
         <translation>錢包需要重寫: 請重啟位元幣來完成</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="137"/>
+        <location filename="../cosmoscoinstrings.cpp" line="137"/>
         <source>Error loading wallet.dat</source>
         <translation>載入檔案 wallet.dat 失敗</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="124"/>
+        <location filename="../cosmoscoinstrings.cpp" line="124"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
         <translation>無效的 -proxy 位址: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="125"/>
+        <location filename="../cosmoscoinstrings.cpp" line="125"/>
         <source>Unknown network specified in -noproxy: &apos;%s&apos;</source>
         <translation>在  -noproxy 指定了不明的網路別: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="127"/>
+        <location filename="../cosmoscoinstrings.cpp" line="127"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
         <translation>在 -onlynet 指定了不明的網路別: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="126"/>
+        <location filename="../cosmoscoinstrings.cpp" line="126"/>
         <source>Unknown -socks proxy version requested: %i</source>
         <translation>在 -socks 指定了不明的代理協定版本: %i</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="128"/>
+        <location filename="../cosmoscoinstrings.cpp" line="128"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
         <translation>無法解析 -bind 位址: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="129"/>
+        <location filename="../cosmoscoinstrings.cpp" line="129"/>
         <source>Not listening on any port</source>
         <translation>不在任何通訊埠聽候連線</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="130"/>
+        <location filename="../cosmoscoinstrings.cpp" line="130"/>
         <source>Cannot resolve -externalip address: &apos;%s&apos;</source>
         <translation>無法解析 -externalip 位址: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="117"/>
+        <location filename="../cosmoscoinstrings.cpp" line="117"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
         <translation>設定 -paytxfee=&lt;金額&gt; 的金額無效: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="143"/>
+        <location filename="../cosmoscoinstrings.cpp" line="143"/>
         <source>Error: could not start node</source>
         <translation>錯誤: 無法啓動節點</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="31"/>
+        <location filename="../cosmoscoinstrings.cpp" line="31"/>
         <source>Error: Wallet locked, unable to create transaction  </source>
         <translation>錯誤: 錢包被上鎖了, 無法產生新的交易 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="32"/>
+        <location filename="../cosmoscoinstrings.cpp" line="32"/>
         <source>Error: This transaction requires a transaction fee of at least %s because of its amount, complexity, or use of recently received funds  </source>
         <translation>錯誤: 這筆交易需要至少 %s 的手續費, 因為它的金額太大, 或複雜度太高, 或是使用了最近才剛收到的款項 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="35"/>
+        <location filename="../cosmoscoinstrings.cpp" line="35"/>
         <source>Error: Transaction creation failed  </source>
         <translation>錯誤: 交易產生失敗</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="36"/>
+        <location filename="../cosmoscoinstrings.cpp" line="36"/>
         <source>Sending...</source>
         <translation>付出中...</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="37"/>
+        <location filename="../cosmoscoinstrings.cpp" line="37"/>
         <source>Error: The transaction was rejected.  This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
         <translation>錯誤: 交易被拒絕. 有時候會發生這種錯誤, 是因為你錢包中的一些錢已經被花掉了. 比如說你複製了錢包檔 wallet.dat, 然後用複製的錢包花掉了錢, 你現在所用的原來的錢包中卻沒有該筆交易紀錄.</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="41"/>
+        <location filename="../cosmoscoinstrings.cpp" line="41"/>
         <source>Invalid amount</source>
         <translation>無效的金額</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="42"/>
+        <location filename="../cosmoscoinstrings.cpp" line="42"/>
         <source>Insufficient funds</source>
         <translation>累積金額不足</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="131"/>
+        <location filename="../cosmoscoinstrings.cpp" line="131"/>
         <source>Loading block index...</source>
         <translation>載入區塊索引中...</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="65"/>
+        <location filename="../cosmoscoinstrings.cpp" line="65"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
         <translation>加入一個要連線的節線, 並試著保持對它的連線暢通</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="28"/>
-        <source>Unable to bind to %s on this computer. Florincoin is probably already running.</source>
+        <location filename="../cosmoscoinstrings.cpp" line="28"/>
+        <source>Unable to bind to %s on this computer. Cosmoscoin is probably already running.</source>
         <translation>無法和這台電腦上的 %s 繫結. 也許位元幣已經在執行了.</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="71"/>
+        <location filename="../cosmoscoinstrings.cpp" line="71"/>
         <source>Find peers using internet relay chat (default: 0)</source>
         <translation>是否使用網際網路中繼聊天(IRC)來找節點 (預設: 0)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="72"/>
+        <location filename="../cosmoscoinstrings.cpp" line="72"/>
         <source>Accept connections from outside (default: 1)</source>
         <translation>是否接受外來連線 (預設: 1)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="74"/>
+        <location filename="../cosmoscoinstrings.cpp" line="74"/>
         <source>Find peers using DNS lookup (default: 1)</source>
         <translation>是否允許在找節點時使用域名查詢 (預設: 1)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="81"/>
+        <location filename="../cosmoscoinstrings.cpp" line="81"/>
         <source>Use Universal Plug and Play to map the listening port (default: 1)</source>
         <translation>是否使用通用即插即用(UPnP)來設定聽候連線的通訊埠 (預設: 1)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="82"/>
+        <location filename="../cosmoscoinstrings.cpp" line="82"/>
         <source>Use Universal Plug and Play to map the listening port (default: 0)</source>
         <translation>是否使用通用即插即用(UPnP)來設定聽候連線的通訊埠 (預設: 0)</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="85"/>
+        <location filename="../cosmoscoinstrings.cpp" line="85"/>
         <source>Fee per KB to add to transactions you send</source>
         <translation>交易付款時每 KB 的交易手續費</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="118"/>
+        <location filename="../cosmoscoinstrings.cpp" line="118"/>
         <source>Warning: -paytxfee is set very high. This is the transaction fee you will pay if you send a transaction.</source>
         <translation>警告: -paytxfee 設定了很高的金額. 這可是你交易付款所要付的手續費.</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="133"/>
+        <location filename="../cosmoscoinstrings.cpp" line="133"/>
         <source>Loading wallet...</source>
         <translation>載入錢包中...</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="138"/>
+        <location filename="../cosmoscoinstrings.cpp" line="138"/>
         <source>Cannot downgrade wallet</source>
         <translation>無法將錢包格式降級</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="139"/>
+        <location filename="../cosmoscoinstrings.cpp" line="139"/>
         <source>Cannot initialize keypool</source>
         <translation>無法將密鑰池初始化</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="140"/>
+        <location filename="../cosmoscoinstrings.cpp" line="140"/>
         <source>Cannot write default address</source>
         <translation>無法寫入預設位址</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="141"/>
+        <location filename="../cosmoscoinstrings.cpp" line="141"/>
         <source>Rescanning...</source>
         <translation>重新掃描中...</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="144"/>
+        <location filename="../cosmoscoinstrings.cpp" line="144"/>
         <source>Done loading</source>
         <translation>載入完成</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="8"/>
+        <location filename="../cosmoscoinstrings.cpp" line="8"/>
         <source>To use the %s option</source>
         <translation>為了要使用 %s 選項</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="9"/>
+        <location filename="../cosmoscoinstrings.cpp" line="9"/>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=bitcoinrpc
+rpcuser=cosmoscoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 If the file does not exist, create it with owner-readable-only file permissions.
@@ -2507,24 +2507,24 @@ If the file does not exist, create it with owner-readable-only file permissions.
         <translation>%s, 你必須在下列設定檔中設定 RPC 密碼(rpcpassword):
 %s
 建議你使用下列的隨機產生密碼:
-rpcuser=bitcoinrpc
+rpcuser=cosmoscoinrpc
 rpcpassword=%s
 (你不用記住這個密碼)
 如果這個檔案還不存在, 請在新增時設定檔案權限為只有擁有者才能讀取.
 </translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="18"/>
+        <location filename="../cosmoscoinstrings.cpp" line="18"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="19"/>
+        <location filename="../cosmoscoinstrings.cpp" line="19"/>
         <source>An error occured while setting up the RPC port %i for listening: %s</source>
         <translation>設定聽候 RPC 連線的通訊埠 %i 時發生錯誤: %s</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="20"/>
+        <location filename="../cosmoscoinstrings.cpp" line="20"/>
         <source>You must set rpcpassword=&lt;password&gt; in the configuration file:
 %s
 If the file does not exist, create it with owner-readable-only file permissions.</source>
@@ -2533,8 +2533,8 @@ If the file does not exist, create it with owner-readable-only file permissions.
 如果這個檔案還不存在, 請在新增時設定檔案權限為只有擁有者才能讀取.</translation>
     </message>
     <message>
-        <location filename="../bitcoinstrings.cpp" line="25"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Florincoin will not work properly.</source>
+        <location filename="../cosmoscoinstrings.cpp" line="25"/>
+        <source>Warning: Please check that your computer&apos;s date and time are correct.  If your clock is wrong Cosmoscoin will not work properly.</source>
         <translation>警告: 請檢查電腦時間日期是否正確. 位元幣無法在時鐘不準的情況下正常運作.</translation>
     </message>
 </context>

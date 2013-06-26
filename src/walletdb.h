@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Cosmoscoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_WALLETDB_H
-#define BITCOIN_WALLETDB_H
+#ifndef COSMOSCOIN_WALLETDB_H
+#define COSMOSCOIN_WALLETDB_H
 
 #include "db.h"
 #include "base58.h"
@@ -92,7 +92,7 @@ public:
         return Write(std::make_pair(std::string("mkey"), nID), kMasterKey, true);
     }
 
-    // Support for BIP 0013 : see https://en.bitcoin.it/wiki/BIP_0013
+    // Support for BIP 0013 : see https://en.cosmoscoin.it/wiki/BIP_0013
     bool ReadCScript(const uint160 &hash, CScript& redeemScript)
     {
         redeemScript.clear();
@@ -178,4 +178,4 @@ public:
     int LoadWallet(CWallet* pwallet);
 };
 
-#endif // BITCOIN_WALLETDB_H
+#endif // COSMOSCOIN_WALLETDB_H

@@ -26,7 +26,7 @@ Site: http://findicons.com/icon/93743/blocks_gnome_netstatus_0
 
 Icon: src/qt/res/icons/transaction*.png
 Designer: md2k7
-Site: https://bitcointalk.org/index.php?topic=15276.0
+Site: https://cosmoscointalk.org/index.php?topic=15276.0
 License: You are free to do with these icons as you wish, including selling,
  copying, modifying etc.
 
@@ -38,10 +38,10 @@ Designer: http://www.everaldo.com
 Icon Pack: Crystal SVG
 License: LGPL
 
-Icon: src/qt/res/icons/bitcoin.png, src/qt/res/icons/toolbar.png
-Designer: BitcoinPorn (forum)
+Icon: src/qt/res/icons/cosmoscoin.png, src/qt/res/icons/toolbar.png
+Designer: CosmoscoinPorn (forum)
 License: Public Domain
-Site: https://bitcointalk.org/index.php?topic=47417.msg591988#msg591988
+Site: https://cosmoscointalk.org/index.php?topic=47417.msg591988#msg591988
 
 Icon:  scripts/img/reload.xcf (modified),src/qt/res/movies/update_spinner.mng
 Icon Pack: Kids
@@ -50,8 +50,8 @@ License: GNU/GPL
 Site: http://findicons.com/icon/17102/reload?id=17102
 
 Image: src/qt/res/images/splash2.jpg (Wallet image)
-Designer: Crobbo (forum), adapted to Litecoin by BitcoinPorn (forum)
-Site: https://bitcointalk.org/index.php?topic=32273.0, https://bitcointalk.org/index.php?topic=47417.msg591988#msg591988
+Designer: Crobbo (forum), adapted to Litecoin by CosmoscoinPorn (forum)
+Site: https://cosmoscointalk.org/index.php?topic=32273.0, https://cosmoscointalk.org/index.php?topic=47417.msg591988#msg591988
 License: Public domain
 
 Icon: src/qt/res/icons/debugwindow.png

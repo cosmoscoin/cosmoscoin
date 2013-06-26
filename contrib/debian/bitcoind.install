@@ -1,2 +1,2 @@
-debian/bin/bitcoind usr/bin
-src/bitcoind usr/lib/bitcoin
+debian/bin/cosmoscoind usr/bin
+src/cosmoscoind usr/lib/cosmoscoin

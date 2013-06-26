@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Cosmoscoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -152,7 +152,7 @@ int CWalletDB::LoadWallet(CWallet* pwallet)
             {
                 string strAddress;
                 ssKey >> strAddress;
-                ssValue >> pwallet->mapAddressBook[CBitcoinAddress(strAddress).Get()];
+                ssValue >> pwallet->mapAddressBook[CCosmoscoinAddress(strAddress).Get()];
             }
             else if (strType == "tx")
             {
@@ -325,7 +325,7 @@ int CWalletDB::LoadWallet(CWallet* pwallet)
 void ThreadFlushWalletDB(void* parg)
 {
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("bitcoin-wallet");
+    RenameThread("cosmoscoin-wallet");
 
     const string& strFile = ((const string*)parg)[0];
     static bool fOneThread;

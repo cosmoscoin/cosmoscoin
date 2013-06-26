@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2009-2012 The Cosmoscoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
@@ -33,7 +33,7 @@ static void ipcThread(void* pArg)
     IMPLEMENT_RANDOMIZE_STACK(ipcThread(pArg));
 	
     // Make this thread recognisable as the GUI-IPC thread
-    RenameThread("bitcoin-gui-ipc");
+    RenameThread("cosmoscoin-gui-ipc");
 	
     try
     {
@@ -70,7 +70,7 @@ static void ipcThread2(void* pArg)
     }
 
     // Remove message queue
-    message_queue::remove(BITCOINURI_QUEUE_NAME);
+    message_queue::remove(COSMOSCOINURI_QUEUE_NAME);
     // Cleanup allocated memory
     delete mq;
 }
@@ -83,9 +83,9 @@ void ipcInit()
     unsigned int nPriority = 0;
 
     try {
-        mq = new message_queue(open_or_create, BITCOINURI_QUEUE_NAME, 2, MAX_URI_LENGTH);
+        mq = new message_queue(open_or_create, COSMOSCOINURI_QUEUE_NAME, 2, MAX_URI_LENGTH);
 
-        // Make sure we don't lose any florincoin: URIs
+        // Make sure we don't lose any cosmoscoin: URIs
         for (int i = 0; i < 2; i++)
         {
             ptime d = boost::posix_time::microsec_clock::universal_time() + millisec(1);
@@ -97,11 +97,11 @@ void ipcInit()
                 break;
         }
 
-        // Make sure only one florincoin instance is listening
-        message_queue::remove(BITCOINURI_QUEUE_NAME);
+        // Make sure only one cosmoscoin instance is listening
+        message_queue::remove(COSMOSCOINURI_QUEUE_NAME);
         delete mq;
 
-        mq = new message_queue(open_or_create, BITCOINURI_QUEUE_NAME, 2, MAX_URI_LENGTH);
+        mq = new message_queue(open_or_create, COSMOSCOINURI_QUEUE_NAME, 2, MAX_URI_LENGTH);
     }
     catch (interprocess_exception &ex) {
         printf("ipcInit() - boost interprocess exception #%d: %s\n", ex.get_error_code(), ex.what());

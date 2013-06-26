@@ -1,6 +1,6 @@
 [Protocol]
-exec=bitcoin-qt '%u'
-protocol=bitcoin
+exec=cosmoscoin-qt '%u'
+protocol=cosmoscoin
 input=none
 output=none
 helper=true

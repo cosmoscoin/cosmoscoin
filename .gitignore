@@ -1,7 +1,7 @@
 src/*.exe
-src/florincoin
-src/florincoind
-src/test_florincoin
+src/cosmoscoin
+src/cosmoscoind
+src/test_cosmoscoin
 src/build.h
 .*.swp
 *.*~*
@@ -10,12 +10,12 @@ src/build.h
 *.orig
 *.o
 *.patch
-.bitcoin
-.florincoin
+.cosmoscoin
+.cosmoscoin
 #compilation and Qt preprocessor part
 *.qm
 Makefile
-florincoin-qt
+cosmoscoin-qt
 #resources cpp
 qrc_*.cpp
 #qt creator

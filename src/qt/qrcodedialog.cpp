@@ -1,7 +1,7 @@
 #include "qrcodedialog.h"
 #include "ui_qrcodedialog.h"
 
-#include "bitcoinunits.h"
+#include "cosmoscoinunits.h"
 #include "guiconstants.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
@@ -83,7 +83,7 @@ void QRCodeDialog::genCode()
 
 QString QRCodeDialog::getURI()
 {
-    QString ret = QString("florincoin:%1").arg(address);
+    QString ret = QString("cosmoscoin:%1").arg(address);
     int paramCount = 0;
 
     ui->outUri->clear();
@@ -93,7 +93,7 @@ QString QRCodeDialog::getURI()
         if (ui->lnReqAmount->validate())
         {
             // even if we allow a non BTC unit input in lnReqAmount, we generate the URI with BTC as unit (as defined in BIP21)
-            ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BTC, ui->lnReqAmount->value()));
+            ret += QString("?amount=%1").arg(CosmoscoinUnits::format(CosmoscoinUnits::BTC, ui->lnReqAmount->value()));
             paramCount++;
         }
         else

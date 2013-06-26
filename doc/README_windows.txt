@@ -1,6 +1,6 @@
 Litecoin 0.6 BETA
 
-Copyright (c) 2009-2012 Bitcoin Developers
+Copyright (c) 2009-2012 Cosmoscoin Developers
 Copyright (c) 2011-2012 Litecoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -31,6 +31,6 @@ to forward port 9333 (TCP) to your computer so you can receive
 incoming connections.  Litecoin works without incoming connections,
 but allowing incoming connections helps the Litecoin network.
 
-See the bitcoin wiki at:
-  https://en.bitcoin.it/wiki/Main_Page
+See the cosmoscoin wiki at:
+  https://en.cosmoscoin.it/wiki/Main_Page
 for more help and information.

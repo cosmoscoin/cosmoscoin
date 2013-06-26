@@ -1,13 +1,13 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2013 The Florincoin developers
+// Copyright (c) 2009-2012 The Cosmoscoin developers
+// Copyright (c) 2013 The Cosmoscoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <boost/assign/list_of.hpp>
 
 #include "base58.h"
-#include "bitcoinrpc.h"
+#include "cosmoscoinrpc.h"
 #include "db.h"
 #include "init.h"
 #include "main.h"
@@ -19,7 +19,7 @@ using namespace boost;
 using namespace boost::assign;
 using namespace json_spirit;
 
-// These are all in bitcoinrpc.cpp:
+// These are all in cosmoscoinrpc.cpp:
 extern Object JSONRPCError(int code, const string& message);
 extern int64 AmountFromValue(const Value& value);
 extern Value ValueFromAmount(int64 amount);
@@ -47,7 +47,7 @@ ScriptPubKeyToJSON(const CScript& scriptPubKey, Object& out)
 
     Array a;
     BOOST_FOREACH(const CTxDestination& addr, addresses)
-        a.push_back(CBitcoinAddress(addr).ToString());
+        a.push_back(CCosmoscoinAddress(addr).ToString());
     out.push_back(Pair("addresses", a));
 }
 
@@ -230,12 +230,12 @@ Value createrawtransaction(const Array& params, bool fHelp)
         rawTx.vin.push_back(in);
     }
 
-    set<CBitcoinAddress> setAddress;
+    set<CCosmoscoinAddress> setAddress;
     BOOST_FOREACH(const Pair& s, sendTo)
     {
-        CBitcoinAddress address(s.name_);
+        CCosmoscoinAddress address(s.name_);
         if (!address.IsValid())
-            throw JSONRPCError(-5, string("Invalid Florincoin address:")+s.name_);
+            throw JSONRPCError(-5, string("Invalid Cosmoscoin address:")+s.name_);
 
         if (setAddress.count(address))
             throw JSONRPCError(-8, string("Invalid parameter, duplicated address: ")+s.name_);
@@ -396,7 +396,7 @@ Value signrawtransaction(const Array& params, bool fHelp)
         Array keys = params[2].get_array();
         BOOST_FOREACH(Value k, keys)
         {
-            CBitcoinSecret vchSecret;
+            CCosmoscoinSecret vchSecret;
             bool fGood = vchSecret.SetString(k.get_str());
             if (!fGood)
                 throw JSONRPCError(-5,"Invalid private key");

@@ -3,7 +3,7 @@
 
 #include "base58.h"
 #include "util.h"
-#include "bitcoinrpc.h"
+#include "cosmoscoinrpc.h"
 
 using namespace std;
 using namespace json_spirit;
@@ -39,7 +39,7 @@ BOOST_FIXTURE_TEST_CASE(rpc_addmultisig, TestNetFixture)
     const char address2Hex[] = "0388c2037017c62240b6b72ac1a2a5f94da790596ebd06177c8572752922165cb4";
 
     Value v;
-    CBitcoinAddress address;
+    CCosmoscoinAddress address;
     BOOST_CHECK_NO_THROW(v = addmultisig(createArgs(1, address1Hex), false));
     address.SetString(v.get_str());
     BOOST_CHECK(address.IsValid() && address.IsScript());

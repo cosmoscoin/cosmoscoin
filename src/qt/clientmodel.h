@@ -13,7 +13,7 @@ class QDateTime;
 class QTimer;
 QT_END_NAMESPACE
 
-/** Model for Bitcoin network client. */
+/** Model for Cosmoscoin network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT

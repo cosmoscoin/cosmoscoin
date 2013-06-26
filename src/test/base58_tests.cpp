@@ -18,15 +18,15 @@ BOOST_AUTO_TEST_SUITE(base58_tests)
     // bool operator< (const CBase58Data& b58) const
     // bool operator> (const CBase58Data& b58) const
 
-// CBitcoinAddress
+// CCosmoscoinAddress
     // bool SetHash160(const uint160& hash160)
     // bool SetPubKey(const std::vector<unsigned char>& vchPubKey)
     // bool IsValid() const
-    // CBitcoinAddress()
-    // CBitcoinAddress(uint160 hash160In)
-    // CBitcoinAddress(const std::vector<unsigned char>& vchPubKey)
-    // CBitcoinAddress(const std::string& strAddress)
-    // CBitcoinAddress(const char* pszAddress)
+    // CCosmoscoinAddress()
+    // CCosmoscoinAddress(uint160 hash160In)
+    // CCosmoscoinAddress(const std::vector<unsigned char>& vchPubKey)
+    // CCosmoscoinAddress(const std::string& strAddress)
+    // CCosmoscoinAddress(const char* pszAddress)
     // uint160 GetHash160() const
 
 #define U(x) (reinterpret_cast<const unsigned char*>(x))
