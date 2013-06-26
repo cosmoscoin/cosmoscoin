@@ -14,6 +14,19 @@ CONFIG += no_include_pwd
 # Dependency library locations can be customized with:
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
+BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
+BOOST_INCLUDE_PATH=E:\deps\boost_1_53_0
+BOOST_LIB_PATH=E:\deps\boost_1_53_0\stage\lib
+BDB_INCLUDE_PATH=E:\deps\db-4.8.30.NC\build_unix
+BDB_LIB_PATH=E:\deps\db-4.8.30.NC\build_unix
+OPENSSL_INCLUDE_PATH=E:\deps\openssl-1.0.1e\include
+OPENSSL_LIB_PATH=E:\deps\openssl-1.0.1e
+MINIUPNPC_INCLUDE_PATH=E:\deps\miniupnpc-1.6
+MINIUPNPC_LIB_PATH=E:\deps\upnpc-exe-win32-20121009
+
+
+
+
 
 OBJECTS_DIR = build
 MOC_DIR = build
