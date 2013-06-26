@@ -273,6 +273,7 @@ public:
     bool operator()(const CNoDestination &no) const;
 };
 
+
 class CCosmoscoinAddress : public CBase58Data
 {
 public:
