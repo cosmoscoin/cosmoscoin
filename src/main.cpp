@@ -1032,8 +1032,8 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     while (nTime > 0 && bnResult < bnTargetLimit)
     {
         // Maximum 200% adjustment per day...
-        bnResult *= 2;
-        nTime -= 24 * 60 * 60;
+        bnResult *= 4;
+        nTime -= 4 * nTargetTimespan;
     }
     if (bnResult > bnTargetLimit)
         bnResult = bnTargetLimit;
@@ -1077,6 +1077,28 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
         return bnTargetLimit.GetCompact(); // second block
 
     int64 nActualSpacing = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
+
+    /*if(pindexLast->nHeight+1 > 10000)
+    {
+        if (nActualSpacing < nTargetSpacing/4)
+            nActualSpacing = nTargetSpacing/4;
+        if (nActualSpacing > nTargetSpacing*4)
+            nActualSpacing = nTargetSpacing*4;
+    }
+    else if(pindexLast->nHeight+1 > 5000)
+    {
+        if (nActualSpacing < nTargetSpacing/8)
+            nActualSpacing = nTargetSpacing/8;
+        if (nActualSpacing > nTargetSpacing*4)
+            nActualSpacing = nTargetSpacing*4;
+    }
+    else
+    {
+        if (nActualSpacing < nTargetSpacing/16)
+            nActualSpacing = nTargetSpacing/16;
+        if (nActualSpacing > nTargetSpacing*4)
+            nActualSpacing = nTargetSpacing*4;
+    }*/
 
     // ppcoin: target change every block
     // ppcoin: retarget with exponential moving toward target spacing
