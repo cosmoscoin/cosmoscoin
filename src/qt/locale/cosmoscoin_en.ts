@@ -16,8 +16,8 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2012 The CosmosCoin developers</source>
-        <translation>Copyright © 2009-2012 The CosmosCoin developers</translation>
+        <source>Copyright © 2013 The CosmosCoin developers</source>
+        <translation>Copyright © 2013 The CosmosCoin developers</translation>
     </message>
     <message>
         <location line="+13"/>
