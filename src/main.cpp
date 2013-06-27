@@ -959,7 +959,7 @@ int64 GetProofOfWorkReward(unsigned int nHeight)
     else
         nSubsidy = 3.5 * COIN;
 
-    nSubsidy >>= (nHeight / 142560000); // Cosmoscoin: 142560000 blocks in 135 years
+    //nSubsidy >>= (nHeight / 142560000); // Cosmoscoin: 142560000 blocks in 135 years
 
     return nSubsidy;
 }
@@ -1015,8 +1015,8 @@ int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nBits, unsigned int nTi
     return nSubsidy;
 }
 
-static const int64 nTargetTimespan = 200*30;  // 100 minutes
-static const int64 nTargetSpacingWorkMax = 12 * nStakeTargetSpacing; //
+static const int64 nTargetTimespan = 0.16 * 24 * 60 * 60;  // 4-hour
+static const int64 nTargetSpacingWorkMax = 12 * nStakeTargetSpacing; // 2-hour
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -2529,7 +2529,7 @@ bool LoadBlockIndex(bool fAllowNew)
         bnProofOfWorkLimit = bnProofOfWorkLimitTestNet; // 0x0000ffff PoW base target is fixed in testnet
         nStakeMinAge = 2 * 60 * 60; // test net min age is 2 hours
         nModifierInterval = 20 * 60; // test modifier interval is 20 minutes
-        nCoinbaseMaturity = 11; // test maturity is 30 blocks
+        nCoinbaseMaturity = 10; // test maturity is 30 blocks
         nStakeTargetSpacing = 3 * 60; // test block spacing is 3 minutes
     }
 

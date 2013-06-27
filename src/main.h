@@ -433,7 +433,6 @@ typedef std::map<uint256, std::pair<CTxIndex, CTransaction> > MapPrevTx;
 class CTransaction
 {
 public:
-    static const int LEGACY_VERSION_1 = 1;
     static const int CURRENT_VERSION=1;
     int nVersion;
     unsigned int nTime;
@@ -459,8 +458,7 @@ public:
         READWRITE(vin);
         READWRITE(vout);
         READWRITE(nLockTime);
-        if(this->nVersion > LEGACY_VERSION_1) {
-        READWRITE(strTxComment); }
+        READWRITE(strTxComment);
     )
 
     void SetNull()
@@ -596,7 +594,7 @@ public:
     {
         // Large (in bytes) low-priority (new, small-coin) transactions
         // need a fee.
-        return dPriority > COIN * 2880 / 250;
+        return dPriority > COIN * 120 / 250;
     }
 
     int64 GetMinFee(unsigned int nBlockSize=1, bool fAllowFree=false, enum GetMinFee_mode mode=GMF_BLOCK) const;
