@@ -1,7 +1,12 @@
-Cosmoscoin - a scrypt based coin with unique features
- - Fast block generation: 40 second block targets
- - subsidy halves in 800k blocks (~1 year)
- - ~160 million total coins 
- - 100 coins per block
- - 90 blocks to retarget difficulty
- - A comments field can be included in a transaction for use between coin sender and receiver.
+
+CosmosCoin Crypto Tokens
+
+Based on NVC/BitGems
+Proof of Work/Proof of Stake Hybrid
+Scrypt
+Linear Difficulty Retarget
+5 Confirms
+10 Tokens Per Block
+Maximum of 47433600 Tokens
+Default P2P Port: 7685
+Default RPC Port: 8385

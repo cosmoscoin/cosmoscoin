@@ -1,9 +1,54 @@
-Cosmoscoin 0.6 BETA
+NovaCoin 0.4.0 BETA
+
+Copyright (c) 2013 NovaCoin Developers
+Copyright (c) 2011-2013 PPCoin Developers
+Distributed under the MIT/X11 software license, see the accompanying
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by Eric Young (eay@cryptsoft.com).
+
+
+Intro
+-----
+NovaCoin is a free open source project derived from PPCoin, with
+the goal of providing a long-term energy-efficient scrypt-based crypto-currency.
+Built on the foundation of Cosmoscoin, innovations such as proof-of-stake and scrypt
+help further advance the field of crypto-currency.
+
+
+Setup
+-----
+After completing windows setup then run windows command line (cmd)
+  cd daemon
+  novacoind
+You would need to create a configuration file novacoin.conf in the default
+wallet directory. Grant access to novacoind.exe in anti-virus and firewall
+applications if necessary.
+
+The software automatically finds other nodes to connect to.  You can
+enable Universal Plug and Play (UPnP) with your router/firewall
+or forward port 9901 (TCP) to your computer so you can receive
+incoming connections.  PPCoin works without incoming connections,
+but allowing incoming connections helps the PPCoin network.
+
+
+Upgrade
+-------
+All you existing coins/transactions should be intact with the upgrade.
+To upgrade from 0.2.x, first backup wallet
+novacoind backupwallet <destination_backup_file>
+Then shutdown ppcoind by
+novacoind stop
+Start up the new novacoind (0.3.0).
+
+
+------------------
+Cosmoscoin 0.6.3 BETA
 
 Copyright (c) 2009-2012 Cosmoscoin Developers
-Copyright (c) 2011-2012 Cosmoscoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
-file COPYING or http://www.opensource.org/licenses/mit-license.php.
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
 This product includes software developed by the OpenSSL Project for use in
 the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
 cryptographic software written by Eric Young (eay@cryptsoft.com).
@@ -16,20 +61,6 @@ completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
 
-
-Setup
------
-Unpack the files into a directory and run cosmoscoin-qt.exe.
-
-If you have Microsoft Security Essentials, you need to add cosmoscoin-qt.exe to its
-"Excluded processes" list.  Microsoft Security Essentials->Settings tab,
-select Excluded processes, press Add, select cosmoscoin-qt.exe, OK, Save changes.
-
-The software automatically finds other nodes to connect to.  You can
-enable Universal Plug and Play using a menu entry or set your firewall
-to forward port 9333 (TCP) to your computer so you can receive
-incoming connections.  Cosmoscoin works without incoming connections,
-but allowing incoming connections helps the Cosmoscoin network.
 
 See the cosmoscoin wiki at:
   https://en.cosmoscoin.it/wiki/Main_Page

@@ -1,16 +1,16 @@
-Name Cosmoscoin
+Name CosmosCoin
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.6.3
-!define COMPANY "Cosmoscoin project"
-!define URL http://www.cosmoscoin.org/
+!define VERSION 0.3.0
+!define COMPANY "CosmosCoin project"
+!define URL http://
 
 # MUI Symbol Definitions
-!define MUI_ICON "../share/pixmaps/cosmoscoin.ico"
+!define MUI_ICON "../share/pixmaps/CosmosCoin.ico"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
@@ -19,8 +19,8 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER Cosmoscoin
-!define MUI_FINISHPAGE_RUN $INSTDIR\cosmoscoin-qt.exe
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER CosmosCoin
+!define MUI_FINISHPAGE_RUN $INSTDIR\CosmosCoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -45,14 +45,14 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile cosmoscoin-0.6.3-win32-setup.exe
-InstallDir $PROGRAMFILES\Cosmoscoin
+OutFile CosmosCoin-0.3.0-win32-setup.exe
+InstallDir $PROGRAMFILES\CosmosCoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.6.3.0
-VIAddVersionKey ProductName Cosmoscoin
+VIProductVersion 0.3.0.0
+VIAddVersionKey ProductName CosmosCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -66,18 +66,18 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ../release/cosmoscoin-qt.exe
+    File ../release/CosmosCoin-qt.exe
     File /oname=license.txt ../COPYING
     File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File ../src/cosmoscoind.exe
+    File ../src/CosmosCoind.exe
     SetOutPath $INSTDIR\src
     File /r /x *.exe /x *.o ../src\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
-    # Remove old wxwidgets-based-cosmoscoin executable and locales:
-    Delete /REBOOTOK $INSTDIR\cosmoscoin.exe
+    # Remove old wxwidgets-based-CosmosCoin executable and locales:
+    Delete /REBOOTOK $INSTDIR\CosmosCoin.exe
     RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
@@ -87,8 +87,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Cosmoscoin.lnk" $INSTDIR\cosmoscoin-qt.exe
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall Cosmoscoin.lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\CosmosCoin.lnk" $INSTDIR\CosmosCoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall CosmosCoin.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -98,10 +98,12 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "litceoin" "URL Protocol" ""
-    WriteRegStr HKCR "cosmoscoin" "" "URL:Cosmoscoin"
-    WriteRegStr HKCR "cosmoscoin\DefaultIcon" "" $INSTDIR\cosmoscoin-qt.exe
-    WriteRegStr HKCR "cosmoscoin\shell\open\command" "" '"$INSTDIR\cosmoscoin-qt.exe" "$$1"'
+
+    # CosmosCoin: URI handling disabled for 0.6.0
+        WriteRegStr HKCR "CosmosCoin" "URL Protocol" ""
+        WriteRegStr HKCR "CosmosCoin" "" "URL:CosmosCoin"
+        WriteRegStr HKCR "CosmosCoin\DefaultIcon" "" $INSTDIR\CosmosCoin-qt.exe
+        WriteRegStr HKCR "CosmosCoin\shell\open\command" "" '"$INSTDIR\CosmosCoin-qt.exe" "$$1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -119,7 +121,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\cosmoscoin-qt.exe
+    Delete /REBOOTOK $INSTDIR\CosmosCoin-qt.exe
     Delete /REBOOTOK $INSTDIR\license.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -129,9 +131,9 @@ SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall Cosmoscoin.lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Cosmoscoin.lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Cosmoscoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall CosmosCoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\CosmosCoin.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\CosmosCoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -139,7 +141,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "cosmoscoin"
+    DeleteRegKey HKCR "CosmosCoin"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

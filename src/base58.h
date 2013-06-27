@@ -1,7 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Cosmoscoin Developers
-// Copyright (c) 2011-2012 Cosmoscoin Developers
-// Copyright (c) 2013 Cosmoscoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +10,7 @@
 //      could be used to create visually identical looking account numbers.
 // - A string with non-alphanumeric characters is not as easily accepted as an account number.
 // - E-mail usually won't line-break if there's no punctuation to break at.
-// - Doubleclicking selects the whole number as one word if it's all alphanumeric.
+// - Double-clicking selects the whole number as one word if it's all alphanumeric.
 //
 #ifndef COSMOSCOIN_BASE58_H
 #define COSMOSCOIN_BASE58_H
@@ -273,16 +271,15 @@ public:
     bool operator()(const CNoDestination &no) const;
 };
 
-
 class CCosmoscoinAddress : public CBase58Data
 {
 public:
     enum
     {
-        PUBKEY_ADDRESS = 27, // Cosmoscoin addresses start with C
-        SCRIPT_ADDRESS = 8,
-        PUBKEY_ADDRESS_TEST = 115,
-        SCRIPT_ADDRESS_TEST = 198,
+        PUBKEY_ADDRESS = 34,  // CosmosCoin: address begin with 'b'
+        SCRIPT_ADDRESS = 8, 
+        PUBKEY_ADDRESS_TEST = 111,
+        SCRIPT_ADDRESS_TEST = 196,
     };
 
     bool Set(const CKeyID &id) {
@@ -314,6 +311,7 @@ public:
                 nExpectedSize = 20; // Hash of CScript
                 fExpectTestNet = false;
                 break;
+
             case PUBKEY_ADDRESS_TEST:
                 nExpectedSize = 20;
                 fExpectTestNet = true;
@@ -404,16 +402,10 @@ bool inline CCosmoscoinAddressVisitor::operator()(const CNoDestination &id) cons
 class CCosmoscoinSecret : public CBase58Data
 {
 public:
-    enum
-    {
-        PRIVKEY_ADDRESS = CCosmoscoinAddress::PUBKEY_ADDRESS + 128,
-        PRIVKEY_ADDRESS_TEST = CCosmoscoinAddress::PUBKEY_ADDRESS_TEST + 128,
-    };
-
     void SetSecret(const CSecret& vchSecret, bool fCompressed)
-    { 
+    {
         assert(vchSecret.size() == 32);
-        SetData(fTestNet ? PRIVKEY_ADDRESS_TEST : PRIVKEY_ADDRESS, &vchSecret[0], vchSecret.size());
+        SetData(128 + (fTestNet ? CCosmoscoinAddress::PUBKEY_ADDRESS_TEST : CCosmoscoinAddress::PUBKEY_ADDRESS), &vchSecret[0], vchSecret.size());
         if (fCompressed)
             vchData.push_back(1);
     }
@@ -432,10 +424,10 @@ public:
         bool fExpectTestNet = false;
         switch(nVersion)
         {
-            case PRIVKEY_ADDRESS:
+            case (128 + CCosmoscoinAddress::PUBKEY_ADDRESS):
                 break;
 
-            case PRIVKEY_ADDRESS_TEST:
+            case (128 + CCosmoscoinAddress::PUBKEY_ADDRESS_TEST):
                 fExpectTestNet = true;
                 break;
 

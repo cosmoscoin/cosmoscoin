@@ -10,6 +10,7 @@ INPUT(
 ./build\aboutdialog.o
 ./build\editaddressdialog.o
 ./build\cosmoscoinaddressvalidator.o
+./build\alert.o
 ./build\version.o
 ./build\sync.o
 ./build\util.o
@@ -24,9 +25,6 @@ INPUT(
 ./build\addrman.o
 ./build\db.o
 ./build\walletdb.o
-./build\json_spirit_writer.o
-./build\json_spirit_value.o
-./build\json_spirit_reader.o
 ./build\clientmodel.o
 ./build\guiutil.o
 ./build\transactionrecord.o
@@ -44,6 +42,9 @@ INPUT(
 ./build\cosmoscoinrpc.o
 ./build\rpcdump.o
 ./build\rpcnet.o
+./build\rpcmining.o
+./build\rpcwallet.o
+./build\rpcblockchain.o
 ./build\rpcrawtransaction.o
 ./build\overviewpage.o
 ./build\csvmodelwriter.o
@@ -57,9 +58,12 @@ INPUT(
 ./build\notificator.o
 ./build\qtipcserver.o
 ./build\rpcconsole.o
-./build\scrypt.o
-./build\miningpage.o
 ./build\noui.o
+./build\kernel.o
+./build\scrypt-x86.o
+./build\scrypt-x86_64.o
+./build\scrypt_mine.o
+./build\pbkdf2.o
 ./build\moc_cosmoscoingui.o
 ./build\moc_transactiontablemodel.o
 ./build\moc_addresstablemodel.o
@@ -87,7 +91,6 @@ INPUT(
 ./build\moc_qvaluecombobox.o
 ./build\moc_askpassphrasedialog.o
 ./build\moc_notificator.o
-./build\moc_miningpage.o
 ./build\moc_rpcconsole.o
 ./build\qrc_cosmoscoin.o
 );

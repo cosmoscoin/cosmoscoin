@@ -1,7 +1,6 @@
 Copyright (c) 2009-2012 Cosmoscoin Developers
-Copyright (c) 2011-2012 Cosmoscoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
-file COPYING or http://www.opensource.org/licenses/mit-license.php.
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
 This product includes software developed by the OpenSSL Project for use in
 the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
 cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
@@ -17,8 +16,8 @@ To Build
 cd src/
 make -f makefile.unix            # Headless cosmoscoin
 
-See readme-qt.rst for instructions on building Cosmoscoin-Qt,
-the graphical user interface.
+See readme-qt.rst for instructions on building Cosmoscoin QT,
+the graphical cosmoscoin.
 
 Dependencies
 ------------
@@ -30,6 +29,9 @@ Dependencies
  libboost    Boost             C++ Library
  miniupnpc   UPnP Support      Optional firewall-jumping support
  libqrencode QRCode generation Optional QRCode generation
+
+Note that libexecinfo should be installed, if you building under *BSD systems. 
+This library provides backtrace facility.
 
 miniupnpc may be used for UPnP port mapping.  It can be downloaded from
 http://miniupnp.tuxfamily.org/files/.  UPnP support is compiled in and
@@ -43,9 +45,6 @@ from http://fukuchi.org/works/qrencode/index.html.en, or installed via
 your package manager. Set USE_QRCODE to control this:
  USE_QRCODE=0   (the default) No QRCode support - libqrcode not required
  USE_QRCODE=1   QRCode support enabled
-
-IPv6 support may be enabled by setting
- USE_IPV6=1    Enable IPv6 support
 
 Licenses of statically linked libraries:
  Berkeley DB   New BSD license with additional requirement that linked
@@ -76,11 +75,15 @@ If using Boost 1.37, append -mt to the boost libraries in the makefile.
 Dependency Build Instructions: Gentoo
 -------------------------------------
 
+Note: If you just want to install cosmoscoind on Gentoo, you can add the Cosmoscoin
+      overlay and use your package manager:
+          layman -a cosmoscoin && emerge cosmoscoind
+
 emerge -av1 --noreplace boost glib openssl sys-libs/db:4.8
 
 Take the following steps to build (no UPnP support):
  cd ${COSMOSCOIN_DIR}/src
- make -f makefile.unix USE_UPNP= USE_IPV6=1 BDB_INCLUDE_PATH='/usr/include/db4.8'
+ make -f makefile.unix USE_UPNP= BDB_INCLUDE_PATH='/usr/include/db4.8'
  strip cosmoscoind
 
 

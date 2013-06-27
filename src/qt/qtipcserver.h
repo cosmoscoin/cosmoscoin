@@ -4,6 +4,7 @@
 // Define Cosmoscoin-Qt message queue name
 #define COSMOSCOINURI_QUEUE_NAME "CosmoscoinURI"
 
-void ipcInit();
+void ipcScanRelay(int argc, char *argv[]);
+void ipcInit(int argc, char *argv[]);
 
 #endif // QTIPCSERVER_H

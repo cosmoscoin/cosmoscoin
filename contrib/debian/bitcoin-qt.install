@@ -1,5 +1,0 @@
-cosmoscoin-qt usr/bin
-share/pixmaps/cosmoscoin32.xpm usr/share/pixmaps
-share/pixmaps/cosmoscoin80.xpm usr/share/pixmaps
-debian/cosmoscoin-qt.desktop usr/share/applications
-debian/cosmoscoin-qt.protocol usr/share/kde4/services/

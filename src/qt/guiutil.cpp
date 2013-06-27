@@ -4,7 +4,6 @@
 #include "cosmoscoinunits.h"
 #include "util.h"
 #include "init.h"
-#include "base58.h"
 
 #include <QString>
 #include <QDateTime>
@@ -81,11 +80,6 @@ bool parseCosmoscoinURI(const QUrl &uri, SendCoinsRecipient *out)
     if(uri.scheme() != QString("cosmoscoin"))
         return false;
 
-    // check if the address is valid
-    CCosmoscoinAddress addressFromUri(uri.path().toStdString());
-    if (!addressFromUri.IsValid())
-        return false;
-
     SendCoinsRecipient rv;
     rv.address = uri.path();
     rv.amount = 0;
@@ -131,10 +125,10 @@ bool parseCosmoscoinURI(QString uri, SendCoinsRecipient *out)
     // Convert cosmoscoin:// to cosmoscoin:
     //
     //    Cannot handle this later, because cosmoscoin:// will cause Qt to see the part after // as host,
-    //    which will lowercase it (and thus invalidate the address).
+    //    which will lower-case it (and thus invalidate the address).
     if(uri.startsWith("cosmoscoin://"))
     {
-        uri.replace(0, 11, "cosmoscoin:");
+        uri.replace(0, 10, "cosmoscoin:");
     }
     QUrl uriInstance(uri);
     return parseCosmoscoinURI(uriInstance, out);
@@ -278,7 +272,7 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Cosmoscoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "CosmosCoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
@@ -360,7 +354,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "cosmoscoin.desktop";
+    return GetAutostartDir() / "CosmosCoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -401,7 +395,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Write a cosmoscoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Cosmoscoin\n";
+        optionFile << "Name=CosmosCoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -422,10 +416,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("Cosmoscoin-Qt") + " " + tr("version") + " " +
+    header = tr("CosmosCoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  cosmoscoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  CosmosCoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -434,9 +428,9 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("Cosmoscoin-Qt"));
+    setWindowTitle(tr("CosmosCoin-Qt"));
     setTextFormat(Qt::PlainText);
-    // setMinimumWidth is ignored for QMessageBox so put in nonbreaking spaces to make it wider.
+    // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));
     setDetailedText(coreOptions + "\n" + uiOptions);
 }
@@ -445,13 +439,13 @@ void HelpMessageBox::printToConsole()
 {
     // On other operating systems, the expected action is to print the message to the console.
     QString strUsage = header + "\n" + coreOptions + "\n" + uiOptions;
-    fprintf(stderr, "%s", strUsage.toStdString().c_str());
+    fprintf(stdout, "%s", strUsage.toStdString().c_str());
 }
 
 void HelpMessageBox::showOrPrint()
 {
 #if defined(WIN32)
-        // On windows, show a message box, as there is no stderr/stdout in windowed applications
+        // On Windows, show a message box, as there is no stderr/stdout in windowed applications
         exec();
 #else
         // On other operating systems, print help text to console

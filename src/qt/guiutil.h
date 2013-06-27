@@ -30,7 +30,7 @@ namespace GUIUtil
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "cosmoscoin:" URI into recipient object, return true on succesful parsing
+    // Parse "cosmoscoin:" URI into recipient object, return true on successful parsing
     // See Cosmoscoin URI definition discussion here: https://cosmoscointalk.org/index.php?topic=33490.0
     bool parseCosmoscoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseCosmoscoinURI(QString uri, SendCoinsRecipient *out);
@@ -47,7 +47,7 @@ namespace GUIUtil
      */
     void copyEntryData(QAbstractItemView *view, int column, int role=Qt::EditRole);
 
-    /** Get save file name, mimics QFileDialog::getSaveFileName, except that it appends a default suffix
+    /** Get save filename, mimics QFileDialog::getSaveFileName, except that it appends a default suffix
         when no suffix is provided by the user.
 
       @param[in] parent  Parent window (or 0)
