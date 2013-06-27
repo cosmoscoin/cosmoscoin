@@ -14,7 +14,9 @@ CONFIG += no_include_pwd
 #windows:LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
 #LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
 
+
 BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
+
 BOOST_INCLUDE_PATH=E:\deps\boost_1_53_0
 BOOST_LIB_PATH=E:\deps\boost_1_53_0\stage\lib
 BDB_INCLUDE_PATH=E:\deps\db-4.8.30.NC\build_unix

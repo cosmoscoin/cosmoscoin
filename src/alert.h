@@ -12,6 +12,13 @@
 #include "uint256.h"
 #include "util.h"
 
+
+static const char* pszMainKey = "0401999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999";
+
+// TestNet alerts pubKey
+static const char* pszTestKey = "0471dc165db490094d35cde15b1f5d755fa6ad6f2b5ed0f340e3f17f57389c3c2af113a8cbcc885bde73305a553b5640c83021128008ddf882e856336269080496";
+
+
 class CNode;
 
 /** Alerts are for notifying old versions if they become too obsolete and
