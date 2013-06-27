@@ -947,7 +947,7 @@ int64 GetProofOfWorkReward(unsigned int nHeight)
         if (nHeight==0)
             nSubsidy= 0 * COIN;
         else if(nHeight==1)
-            nSubsidy= 6619971.5 * COIN;
+            nSubsidy= 2083971.5 * COIN;
         else if(nHeight <= 500)
             nSubsidy = 0 * COIN;
         else if(nHeight <= 1000)
@@ -959,7 +959,9 @@ int64 GetProofOfWorkReward(unsigned int nHeight)
         else
             nSubsidy = 3.5 * COIN;
 			
-    return nSubsidy;
+        nSubsidy >>= (nHeight / 142560000); // Cosmoscoin: 142560000 blocks in 135 years
+
+    return nSubsidy + nFees;
 }
 
 // miner's coin stake reward based on nBits and coin age spent (coin-days)
@@ -1014,7 +1016,7 @@ int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nBits, unsigned int nTi
 }
 
 static const int64 nTargetTimespan = 200*30;  // 100 minutes
-static const int64 nTargetSpacingWorkMax = 12 * nStakeTargetSpacing; // 2-hour
+static const int64 nTargetSpacingWorkMax = 12 * nStakeTargetSpacing; //
 
 //
 // minimum amount of work that could possibly be required nTime after
