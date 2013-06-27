@@ -276,7 +276,7 @@ class CCosmoscoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 34,  // CosmosCoin: address begin with 'b'
+        PUBKEY_ADDRESS = 27,  // CosmosCoin: address begin with 'C'
         SCRIPT_ADDRESS = 8, 
         PUBKEY_ADDRESS_TEST = 111,
         SCRIPT_ADDRESS_TEST = 196,
