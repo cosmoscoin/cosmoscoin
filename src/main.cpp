@@ -41,8 +41,8 @@ static CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporari
 static CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
-unsigned int nStakeMinAge = 60 * 60 * 24 * 7; // minimum age for coin age
-unsigned int nStakeMaxAge = 60 * 60 * 24 * 30; // stake age of full weight
+unsigned int nStakeMinAge = 60 * 60 * 24 * 30; // minimum age for coin age
+unsigned int nStakeMaxAge = 60 * 60 * 24 * 90; // stake age of full weight
 unsigned int nStakeTargetSpacing = 0.5 * 60; // 30 seconds block spacing
 int64 nChainStartTime = 1372219200;//2013/06/26/12:00:00
 int nCoinbaseMaturity = 10;//mining need 30 confirm
@@ -1032,8 +1032,8 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     while (nTime > 0 && bnResult < bnTargetLimit)
     {
         // Maximum 200% adjustment per day...
-        bnResult *= 4;
-        nTime -= 4 * nTargetTimespan;
+        bnResult *= 2;
+        nTime -= 24 * 60 * 60;
     }
     if (bnResult > bnTargetLimit)
         bnResult = bnTargetLimit;
