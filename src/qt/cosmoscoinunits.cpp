@@ -34,9 +34,9 @@ QString CosmoscoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("CMC/FEC");
-    case mBTC: return QString("mBOT");
-    case uBTC: return QString::fromUtf8("μBOT");
+    case BTC: return QString("CMC");
+    case mBTC: return QString("mCMC");
+    case uBTC: return QString::fromUtf8("μCMC");
     default: return QString("???");
     }
 }
