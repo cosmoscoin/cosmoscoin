@@ -23,7 +23,7 @@
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -152,7 +152,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QValidatedLineEdit" name="proxyIp">
+          <widget class="QValidatedLineEdit" name="proxyIp" native="true">
            <property name="maximumSize">
             <size>
              <width>140</width>
@@ -440,6 +440,11 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>QValidatedLineEdit</class>
+   <extends>QWidget</extends>
+   <header>qvalidatedlineedit.h</header>
+  </customwidget>
+  <customwidget>
    <class>CosmoscoinAmountField</class>
    <extends>QSpinBox</extends>
    <header>cosmoscoinamountfield.h</header>
@@ -448,11 +453,6 @@
    <class>QValueComboBox</class>
    <extends>QComboBox</extends>
    <header>qvaluecombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>QValidatedLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qvalidatedlineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
