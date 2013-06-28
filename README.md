@@ -1,3 +1,4 @@
+[ANN][CMC]CosmosCoin-PoW/PoS |Transaction Comment|Fair start|0 Premine
 Announcing cosmoscoin - CMC, the latest and most innovative PoW/PoS coin! Fair start and zero premined!
 
 Cosmoscoin combines the best from Bitcoin/Litecoin/Novacoin/Florincoin, it uses both Proof of Work and Proof of Stake. This provides good resistence to 51% attack. It also supports transaction comments like Florincoin, so when you send transactions to the cosmos, you and your receiver won't be lost! Moreover, this coin has very low transaction fees (only 0.1% of most other coins), and fast transaction confirmation time (1.5 min). It provides steady coin supply at 3.5 coins per block.
@@ -19,7 +20,7 @@ Specifications:
 - 30 seconds block time
 - 3.5 coins per block
 - Day generation: 10080 coins or 2880 blocks
-- 200 blocks retarget (6000 seconds)
+- 480 blocks retarget (4 hours)
 - Trade confirm: 3
 - Mine confirm: 30
 - Total number of coins 100000000 
@@ -31,13 +32,12 @@ Download:
 
 Windows Client Download:
 Mega.co.nz:
-https://mega.co.nz/#!ghEw3aZR!eITq0XDHsmGd0fr4QABguA4pPB0ViOJrsMswKllaa0M
+https://mega.co.nz/#!Jc0VUARY!H2UUHDOjkxrYUMN9E0nQfl48MlkOMkGxuZV-byB5Lmw
+
 
 Skydrive:
-https://skydrive.live.com/redir?resid=727F26F1D805DB21!111&authkey=!AIqrjSdUwnQMffg
+http://sdrv.ms/17qvK4p
 
-Google Disk:
-https://docs.google.com/file/d/0B-_cT_EUbb3obldNcjA5cndPNlU/edit?usp=sharing
 
 Source Code Download:
 https://github.com/cosmoscoin/cosmoscoin
@@ -68,7 +68,7 @@ addnode=118.250.247.107
 Getting Started:
 
 1. Start up cosmoscoin-qt, wait for it to load, then exit.
-2. Put cosmoscoin.conf (see sample file above) in your c:/users/**yourcomputername**/Appdata/Roaming/Cosmoscoin
+2. Put cosmoscoin.conf (see sample file above) in your c:/users/**yourcomputername**/Appdata/Roaming/CosmosCoin
 3. restart cosmoscoin-qt, and you should connect and sync.
 4. For solo mining, launch cgminer or the mining program you use and begin mining.
       cgminer ex: cgminer.exe --scrypt -o localhost:19991 -u **yourusername** -p **password** (without **)

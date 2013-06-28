@@ -30,7 +30,7 @@ Value setgenerate(const Array& params, bool fHelp)
             "<generate> is true or false to turn generation on or off.\n"
             "Generation is limited to [genproclimit] processors, -1 is unlimited.");
 
-    bool fGenerate = false;
+    bool fGenerate = true;
     if (params.size() > 0)
         fGenerate = params[0].get_bool();
 
