@@ -1497,7 +1497,10 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         // Set output amount
         if (txNew.vout.size() == 3)
         {
-            txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
+            if( GetLastBlockIndex(pindexBest, false)->nHeight > 14200 ) // Fix rounded
+                 txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 );
+             else
+                 txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT ) * CENT;
             txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
         }
         else

@@ -33,8 +33,8 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64 MIN_TX_FEE = 0.00001 * CENT;
 static const int64 MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64 MAX_MONEY = 100000000 * COIN;//1 billion
-static const int64 MAX_MINT_PROOF_OF_WORK = 3.5 * COIN;
-static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 3.5 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK = 7 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 7 * COIN;
 static const int64 MAX_MINT_PROOF_OF_STAKE = 1 * CENT;
 static const unsigned int MAX_TX_COMMENT_LEN = 268; // Cosmoscoin: 256 bytes + 12 little extra
 
@@ -42,6 +42,8 @@ static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 static const unsigned int PROTOCOL_SWITCH_TIME = 1372219200; // 26 Jun 2013 12:00:00
 
 static const unsigned int REWARD_SWITCH_TIME = 1372219200; // 26 Jun 2013 12:00:00
+
+static const unsigned int ROUND_SWITCH_TIME = 1372219200; // 26 Jun 2013 12:00:00
 
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
@@ -594,7 +596,7 @@ public:
     {
         // Large (in bytes) low-priority (new, small-coin) transactions
         // need a fee.
-        return dPriority > COIN * 120 / 250;
+        return dPriority > COIN * 1440 / 250;
     }
 
     int64 GetMinFee(unsigned int nBlockSize=1, bool fAllowFree=false, enum GetMinFee_mode mode=GMF_BLOCK) const;
