@@ -33,7 +33,7 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 uint256 hashGenesisBlock = hashGenesisBlockOfficial;
-static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
+static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);//start diff is zero, if modify 20 to 30, start diff is 0.25
 static CBigNum bnProofOfStakeLimit(~uint256(0) >> 24);
 static CBigNum bnProofOfStakeHardLimit(~uint256(0) >> 30); // disabled temporarily, will be used in the future to fix minimum PoS difficulty at 0.25
 
@@ -74,6 +74,8 @@ int64 nHPSTimerStart;
 
 // Settings
 int64 nTransactionFee = MIN_TX_FEE;
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -940,26 +942,46 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 }
 
 // miner's coin base reward based on nBits
-int64 GetProofOfWorkReward(unsigned int nHeight)
+int64 GetProofOfWorkReward(unsigned int nBits)
 {
-    int64 nSubsidy = 0 * COIN;
 
-    if(nHeight < 240)
-        nSubsidy = 1 * COIN;
-    else if(nHeight < 480)
-        nSubsidy = 2 * COIN;
-    else if(nHeight < 720)
-        nSubsidy = 3 * COIN;
-    else if(nHeight < 960)
-        nSubsidy = 4 * COIN;
-    else if(nHeight < 1200)
-        nSubsidy = 5 * COIN;
-    else
-        nSubsidy = 7 * COIN;
+    /*CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
+    CBigNum bnTarget;
+    bnTarget.SetCompact(nBits);
+    CBigNum bnTargetLimit = bnProofOfWorkLimit;
+    bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
 
-    nSubsidy >>= (nHeight / 71280000); // Cosmoscoin: 71280000 blocks in 135 years
-    return nSubsidy;
 
+    CBigNum bnLowerBound = CENT;
+    CBigNum bnUpperBound = bnSubsidyLimit;
+    while (bnLowerBound + CENT <= bnUpperBound)
+    {
+        CBigNum bnMidValue = (bnLowerBound + bnUpperBound) / 2;
+        if (fDebug && GetBoolArg("-printcreation"))
+            printf("GetProofOfWorkReward() : lower=%"PRI64d" upper=%"PRI64d" mid=%"PRI64d"\n", bnLowerBound.getuint64(), bnUpperBound.getuint64(), bnMidValue.getuint64());
+        if (bnMidValue * bnMidValue * bnMidValue * bnMidValue * bnTargetLimit > bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnTarget)
+            bnUpperBound = bnMidValue;
+        else
+            bnLowerBound = bnMidValue;
+    }
+
+    int64 nSubsidy = bnUpperBound.getuint64();
+
+
+
+    if (fDebug && GetBoolArg("-printcreation"))
+        printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%"PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
+    */
+
+    /*int64 nSubsidy=MAX_MINT_PROOF_OF_WORK;
+    if(nBits==504365055 && fGenerateFirstBlock)
+    {
+        fGenerateFirstBlock=false;
+        return 2083971.5*COIN;
+    }
+    else return nSubsidy;*/
+        //return min(nSubsidy, MAX_MINT_PROOF_OF_WORK);
+    return MAX_MINT_PROOF_OF_WORK;
 
 }
 
@@ -1124,8 +1146,14 @@ unsigned int static GetNextTargetRequired(const CBlockIndex* pindexLast, bool fP
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
 {
+    //printf("block.nBits in CheckProofWork Func is:%d\n", nBits);
+
+
     CBigNum bnTarget;
     bnTarget.SetCompact(nBits);
+
+    //printf("uint256 hash in CheckProofWork Func is:%s\n", hash.ToString().c_str());
+    //printf("bnTarget.getuint256() in CheckProofWork Func is:%d\n", bnTarget.getuint256().ToString().c_str());
 
     // Check range
     if (bnTarget <= 0 || bnTarget > bnProofOfWorkLimit)
@@ -1862,9 +1890,9 @@ bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
     bnBestChainTrust = pindexNew->bnChainTrust;
     nTimeBestReceived = GetTime();
     nTransactionsUpdated++;
-    printf("SetBestChain: new best=%s  height=%d  trust=%s  date=%s\n",
+    printf("SetBestChain: new best=%s  height=%d  trust=%s  date=%s,block hash= %s\n",
            hashBestChain.ToString().substr(0,20).c_str(), nBestHeight, bnBestChainTrust.ToString().c_str(),
-           DateTimeStrFormat("%x %H:%M:%S", pindexBest->GetBlockTime()).c_str());
+           DateTimeStrFormat("%x %H:%M:%S", pindexBest->GetBlockTime()).c_str(), FindBlockByHeight(nBestHeight)->GetBlockHash().ToString().c_str());
 
     // Check the version of the last 100 blocks to see if we need to upgrade:
     if (!fIsInitialDownload)
@@ -2053,6 +2081,8 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
         return DoS(100, error("CheckBlock() : size limits failed"));
 
     // Check proof of work matches claimed amount
+    //printf("block.nBits in CheckBlock Func is:%d\n", nBits);
+
     if (fCheckPOW && IsProofOfWork() && !CheckProofOfWork(GetHash(), nBits))
         return DoS(50, error("CheckBlock() : proof of work failed"));
 
@@ -2574,8 +2604,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1372219200;
+        block.nTime    = nChainStartTime;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
+        //block.nBits    = 0x1e0ffff0;
         block.nNonce   = 1372219200;
 
         if (false  && (block.GetHash() != hashGenesisBlock)) {
@@ -2601,11 +2632,12 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
+        printf("block.nBits = %u \n", block.nBits);
 
         assert(block.hashMerkleRoot == uint256("0xb0735f82d290ad30c1d44c7d1dc68535aadb4b03d9e449752a35a4306a0f3221"));
 
         assert(block.GetHash() == hashGenesisBlock);
-        assert(block.CheckBlock());
+        //assert(block.CheckBlock());
 
         // Start new block file
         unsigned int nFile;
@@ -3410,7 +3442,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         vRecv >> block;
 
         printf("received block %s\n", block.GetHash().ToString().substr(0,20).c_str());
-        // block.print();
+
+        //block.print();
+        //if(block.IsProofOfWork()) printf("block is proof of work\n");
+        //if(block.IsProofOfStake()) printf("block is proof of stake\n");
 
         CInv inv(MSG_BLOCK, block.GetHash());
         pfrom->AddInventoryKnown(inv);
@@ -4216,7 +4251,11 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake)
             printf("CreateNewBlock(): total size %"PRI64u"\n", nBlockSize);
 
         if (pblock->IsProofOfWork())
+        {
+            //pblock->
             pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits);
+            //printf("Proof of Work Coins generated in pblock->nBits %d  is : %d \n",pblock->nBits,pblock->vtx[0].vout[0].nValue);
+        }
 
         // Fill in header
         pblock->hashPrevBlock  = pindexPrev->GetBlockHash();

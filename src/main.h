@@ -33,7 +33,7 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64 MIN_TX_FEE = 0.00001 * CENT;
 static const int64 MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64 MAX_MONEY = 100000000 * COIN;//1 billion
-static const int64 MAX_MINT_PROOF_OF_WORK = 7 * COIN;
+static const int64 MAX_MINT_PROOF_OF_WORK = 3.5 * COIN;
 static const int64 MAX_MINT_PROOF_OF_WORK_LEGACY = 7 * COIN;
 static const int64 MAX_MINT_PROOF_OF_STAKE = 1 * CENT;
 static const unsigned int MAX_TX_COMMENT_LEN = 268; // Cosmoscoin: 256 bytes + 12 little extra
@@ -55,7 +55,7 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x455b5ff1160dae23d76fe7dd2180380cd396082f8be9e1123da91a4375a6ad0d");
+static const uint256 hashGenesisBlockOfficial("0x63d89409293780421b39861955dace7dc48a79ae59d105a6497216d3acd542d4");
 static const uint256 hashGenesisBlockTestNet("0x");
 
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
