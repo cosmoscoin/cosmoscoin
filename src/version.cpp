@@ -8,10 +8,10 @@
 // Name of client reported in the 'version' message. Report the same name
 // for both cosmoscoind and cosmoscoin-qt, to make it harder for attackers to
 // target servers or GUI users specifically.
-const std::string CLIENT_NAME("Satoshi");
+const std::string CLIENT_NAME("CosmosCoin");
 
 // Client version number
-#define CLIENT_VERSION_SUFFIX   "-caps"
+#define CLIENT_VERSION_SUFFIX   "-cmc"
 
 
 // The following part of the code determines the CLIENT_BUILD variable.
@@ -56,7 +56,7 @@ const std::string CLIENT_NAME("Satoshi");
 
 #ifndef BUILD_DATE
 #    ifdef GIT_COMMIT_DATE
-#        define BUILD_DATE GIT_COMMIT_DATE
+#        define BUILD_DATE "Jun 28, 2013"
 #    else
 #        define BUILD_DATE __DATE__ ", " __TIME__
 #    endif
