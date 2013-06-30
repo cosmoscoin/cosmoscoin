@@ -530,6 +530,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <source>%n active connection(s) to Cosmoscoin network</source>
         <translation>
 	<numerusform>%n 个到宇宙币网络的活动连接</numerusform>
+            <numerusform>%n 个到宇宙币网络的活动连接</numerusform>
 	</translation>
     </message>
     <message>
