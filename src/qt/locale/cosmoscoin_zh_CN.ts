@@ -774,7 +774,7 @@ Address: %4
     <message>
         <location line="+1"/>
         <source>Start minimized</source>
-        <translation>启动时最小化
+        <translation>启动时最小化</translation>
     </message>
     <message>
         <location line="+1"/>
