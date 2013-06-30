@@ -1,6 +1,6 @@
 <?xml version="1.0"  encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS language="zh_CN" version="2.0">
+<TS version="2.0" language="zh_CN">
 <defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>AboutDialog</name>
