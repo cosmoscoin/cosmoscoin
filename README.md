@@ -1,6 +1,25 @@
 [ANN][CMC]CosmosCoin-PoW/PoS |Transaction Comment|Fair start|0 Premine
 
+Update Version [1.5]
+1 add network hash speed output in Debug->console (type 'getmininginfo' you can get the network hash speed)
+2 transaction fee is zero - This wouldn't effect the previous transactions
+3 add Chinese Translation to CosmosCoin Client
+4 Other little bugs fixed
 
+Verions 1.5 Windows Download Address:
+.7z file:
+http://sdrv.ms/13mxsEN
+https://mega.co.nz/#!4MMVULhD!Gx0SmUBy4reYhVBqbpPak3JvRsF0ZZ7S3Pl5ESLidOU
+
+
+.exe setup:
+http://sdrv.ms/13mxtZo
+https://mega.co.nz/#!wZtDyCZY!aPC4iWVX7adWLsQMNH1I5SfU0BgpHk_PZrCQbAPMgnk
+
+
+For Linux version or MacOS version, you can get the souce code form https://github.com/cosmoscoin/cosmoscoin and compile it by your self.
+
+Version [1.4]
 https://raw.github.com/cosmoscoin/cosmoscoin/master/src/qt/res/icons/cosmoscoin.png
 
 [Announcing CosmosCoin - CMC, the latest and most innovative PoW/PoS coin! Fair start and zero premined![/font][/size]
@@ -80,4 +99,4 @@ Getting Started:
 2. Put cosmoscoin.conf (see sample file above) in your c:/users/**yourcomputername**/Appdata/Roaming/CosmosCoin
 3. restart cosmoscoin-qt, and you should connect and sync.
 4. For solo mining, launch cgminer or the mining program you use and begin mining.
-      cgminer ex: cgminer.exe --scrypt -o localhost:19991 -u **yourusername** -p **password** (without **)
+      cgminer ex: cgminer.exe --scrypt -o localhost:19991 -u **yourusername** -p **password** (without **)
