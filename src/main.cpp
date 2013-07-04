@@ -2076,6 +2076,12 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
 
+    // --- patch start//Patch from XertroV, great thanks to him https://bitcointalk.org/index.php?action=profile;u=37740
+        // blacklist
+        if (GetHash() == uint256("0x000000082f31f8c70dd7f9a857f04fe14f7df2a57bb9bc1f54d336c70dea6205"))
+            return error("CheckBlock() : hash == 000000082f31f8c70dd7f9a857f04fe14f7df2a57bb9bc1f54d336c70dea6205");
+        // --- patch end
+
     // Size limits
     if (vtx.empty() || vtx.size() > MAX_BLOCK_SIZE || ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION) > MAX_BLOCK_SIZE)
         return DoS(100, error("CheckBlock() : size limits failed"));
