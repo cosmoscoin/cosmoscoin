@@ -2125,37 +2125,37 @@ Address: %4
     <message>
         <location line="-25"/>
         <source>Send command to -server or cosmoscoind</source>
-        <translation>Send command to -server or cosmoscoind</translation>
+        <translation>发送命令到-server或cosmoscoind</translation>
     </message>
     <message>
         <location line="-19"/>
         <source>List commands</source>
-        <translation>List commands</translation>
+        <translation>命令列表</translation>
     </message>
     <message>
         <location line="-11"/>
         <source>Get help for a command</source>
-        <translation>Get help for a command</translation>
+        <translation>获取某个命令的帮助</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>Options:</source>
-        <translation>Options:</translation>
+        <translation>选项:</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Specify configuration file (default: CosmosCoin.conf)</source>
-        <translation>Specify configuration file (default: CosmosCoin.conf)</translation>
+        <translation>制定配置文件(默认: CosmosCoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Specify pid file (default: CosmosCoind.pid)</source>
-        <translation>Specify pid file (default: CosmosCoind.pid)</translation>
+        <translation>指定pid文件(默认: CosmosCoind.pid)</translation>
     </message>
     <message>
         <location line="-47"/>
         <source>Generate coins</source>
-        <translation>Generate coins</translation>
+        <translation>生成货币</translation>
     </message>
     <message>
         <location line="-14"/>
@@ -2165,12 +2165,12 @@ Address: %4
     <message>
         <location line="+60"/>
         <source>Specify data directory</source>
-        <translation>Specify data directory</translation>
+        <translation>指定数据文件夹</translation>
     </message>
     <message>
         <location line="-8"/>
         <source>Set database cache size in megabytes (default: 25)</source>
-        <translation>Set database cache size in megabytes (default: 25)</translation>
+        <translation>设置数据缓存大小（MB为单位）(默认: 25)</translation>
     </message>
     <message>
         <location line="+1"/>

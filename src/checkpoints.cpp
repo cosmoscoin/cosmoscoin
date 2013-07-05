@@ -13,23 +13,33 @@
 
 namespace Checkpoints
 {
-    typedef std::map<int, uint256> MapCheckpoints;
+typedef std::map<int, uint256> MapCheckpoints;
 
-    //
-    // What makes a good checkpoint block?
-    // + Is surrounded by blocks with reasonable timestamps
-    //   (no blocks before with a timestamp after, none after with
-    //    timestamp before)
-    // + Contains no strange transactions
-    //
-    static MapCheckpoints mapCheckpoints =
+//
+// What makes a good checkpoint block?
+// + Is surrounded by blocks with reasonable timestamps
+//   (no blocks before with a timestamp after, none after with
+//    timestamp before)
+// + Contains no strange transactions
+//
+static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
         ( 0, hashGenesisBlockOfficial )
+        ( 948, uint256("0x000000159419e302d0f6dc693c0acb96f5c9f65ca494f707838af28e6fbc09b1"))
+        (3343, uint256("0x00000004614fa2f24d8bd767e6d8cf60624ecf832cf0a98eda8c8f92bd681ca1"))
+        (8714, uint256("0x0000000040f5cb221c1b3ee66147e54c5e6f10c7fd07c27830f2a14f1591c898"))
+        (8888, uint256("0x00000006ad1d6b95aed19f3b680303a7230d93a5a53a4fbb337d1ceff8acc074"))
+        (8909, uint256("0x000000047dc207861348c0fe5165894cb7f601702fcb75c1b40f859fa99e5c89"))
         ;
 
-    static MapCheckpoints mapCheckpointsTestnet =
+static MapCheckpoints mapCheckpointsTestnet =
         boost::assign::map_list_of
-        ( 0, hashGenesisBlockTestNet )
+        (   0, hashGenesisBlockTestNet )
+        ( 948, uint256("0x000000159419e302d0f6dc693c0acb96f5c9f65ca494f707838af28e6fbc09b1"))
+        (3343, uint256("0x00000004614fa2f24d8bd767e6d8cf60624ecf832cf0a98eda8c8f92bd681ca1"))
+        (8714, uint256("0x0000000040f5cb221c1b3ee66147e54c5e6f10c7fd07c27830f2a14f1591c898"))
+        (8888, uint256("0x00000006ad1d6b95aed19f3b680303a7230d93a5a53a4fbb337d1ceff8acc074"))
+        (8909, uint256("0x000000047dc207861348c0fe5165894cb7f601702fcb75c1b40f859fa99e5c89"))
         ;
 
     bool CheckHardened(int nHeight, const uint256& hash)
