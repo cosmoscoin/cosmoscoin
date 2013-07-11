@@ -2564,22 +2564,22 @@ Address: %4
     <message>
         <location line="+44"/>
         <source>Loading addresses...</source>
-        <translation>Loading addresses...</translation>
+        <translation>加载地址...</translation>
     </message>
     <message>
         <location line="-26"/>
         <source>Error loading blkindex.dat</source>
-        <translation>Error loading blkindex.dat</translation>
+        <translation>加载blkindex.dat失败</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation>Error loading wallet.dat: Wallet corrupted</translation>
+        <translation>加载钱包文件wallet.dat失败: 钱包已损坏</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Error loading wallet.dat: Wallet requires newer version of CosmosCoin</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of CosmosCoin</translation>
+        <translation>加载钱包文件wallet.dat失败: 钱包需要新版本的CMC客户端才能运行</translation>
     </message>
     <message>
         <location line="+73"/>
@@ -2644,7 +2644,7 @@ Address: %4
     <message>
         <location line="+8"/>
         <source>Loading block index...</source>
-        <translation>Loading block index...</translation>
+        <translation>加载区块索引...</translation>
     </message>
     <message>
         <location line="-46"/>
@@ -2694,7 +2694,7 @@ Address: %4
     <message>
         <location line="-40"/>
         <source>Done loading</source>
-        <translation>Done loading</translation>
+        <translation>加载完成</translation>
     </message>
     <message>
         <location line="+64"/>
