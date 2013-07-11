@@ -224,21 +224,25 @@ void ThreadIRCSeed2(void* parg)
 
     while (!fShutdown)
     {
-        CService addrConnect("188.122.74.140", 6667); // eu.undernet.org
+        CService addrConnect("92.243.23.21", 6667); // irc.lfnet.org
 
-        CService addrIRC("irc.rizon.net", 6667, true);
+        CService addrIRC("irc.lfnet.org", 6667, true);
         if (addrIRC.IsValid())
             addrConnect = addrIRC;
 
         SOCKET hSocket;
         if (!ConnectSocket(addrConnect, hSocket))
         {
-            printf("IRC connect failed\n");
-            nErrorWait = nErrorWait * 11 / 10;
-            if (Wait(nErrorWait += 60))
-                continue;
-            else
-                return;
+            addrConnect = CService("pelican.heliacal.net", 6667, true);
+            if (!ConnectSocket(addrConnect, hSocket))
+            {
+                printf("IRC connect failed\n");
+                nErrorWait = nErrorWait * 11 / 10;
+                if (Wait(nErrorWait += 60))
+                    continue;
+                else
+                    return;
+            }
         }
 
         if (!RecvUntil(hSocket, "Found your hostname", "using your IP address instead", "Couldn't look up your hostname", "ignoring hostname"))
