@@ -113,6 +113,11 @@ OverviewPage::OverviewPage(QWidget *parent) :
     ui->labelWalletStatus->setText("(" + tr("out of sync") + ")");
     ui->labelTransactionsStatus->setText("(" + tr("out of sync") + ")");
 
+    QPalette  p;
+    p.setColor(QPalette::WindowText,Qt::red);
+    ui->label_CosmosCoin_Intro->setPalette(p);
+
+
     // start with displaying the "out of sync" warnings
     showOutOfSyncWarning(true);
 }
