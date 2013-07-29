@@ -942,7 +942,7 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 }
 
 // miner's coin base reward based on nBits
-int64 GetProofOfWorkReward(unsigned int nBits)
+int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 {
 
     /*CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
@@ -990,57 +990,44 @@ int64 GetProofOfStakeReward(int64 nCoinAge, unsigned int nBits, unsigned int nTi
 {
     int64 nRewardCoinYear;
 
-    if(fTestNet || nTime > PROTOCOL_SWITCH_TIME)
+
+    // Stage 2 of emission process is PoS-based. It will be active on mainNet since 20 Jun 2013.
+
+    CBigNum bnRewardCoinYearLimit = MAX_MINT_PROOF_OF_STAKE; // Base stake mint rate, 100% year interest
+    CBigNum bnTarget;
+    bnTarget.SetCompact(nBits);
+    CBigNum bnTargetLimit = bnProofOfStakeLimit;
+    bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
+
+    // CosmosCoin: reward for coin-year is cut in half every 64x multiply of PoS difficulty
+    // A reasonably continuous curve is used to avoid shock to market
+    // (nRewardCoinYearLimit / nRewardCoinYear) ** 4 == bnProofOfStakeLimit / bnTarget
+    //
+    // Human readable form:
+    //
+    // nRewardCoinYear = 1 / (posdiff ^ 1/4)
+
+    CBigNum bnLowerBound = 1 * CENT; // Lower interest bound is 1% per year
+    CBigNum bnUpperBound = bnRewardCoinYearLimit;
+    while (bnLowerBound + CENT <= bnUpperBound)
     {
-        // Stage 2 of emission process is PoS-based. It will be active on mainNet since 20 Jun 2013.
-
-        CBigNum bnRewardCoinYearLimit = MAX_MINT_PROOF_OF_STAKE; // Base stake mint rate, 100% year interest
-        CBigNum bnTarget;
-        bnTarget.SetCompact(nBits);
-        CBigNum bnTargetLimit = bnProofOfStakeLimit;
-        bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
-
-        // CosmosCoin: reward for coin-year is cut in half every 64x multiply of PoS difficulty
-        // A reasonably continuous curve is used to avoid shock to market
-        // (nRewardCoinYearLimit / nRewardCoinYear) ** 4 == bnProofOfStakeLimit / bnTarget
-        //
-        // Human readable form:
-        //
-        // nRewardCoinYear = 1 / (posdiff ^ 1/4)
-
-        CBigNum bnLowerBound = 1 * CENT; // Lower interest bound is 1% per year
-        CBigNum bnUpperBound = bnRewardCoinYearLimit;
-        while (bnLowerBound + CENT <= bnUpperBound)
-        {
-            CBigNum bnMidValue = (bnLowerBound + bnUpperBound) / 2;
-            if (fDebug && GetBoolArg("-printcreation"))
-                printf("GetProofOfStakeReward() : lower=%"PRI64d" upper=%"PRI64d" mid=%"PRI64d"\n", bnLowerBound.getuint64(), bnUpperBound.getuint64(), bnMidValue.getuint64());
-            if (bnMidValue * bnMidValue * bnMidValue * bnMidValue * bnTargetLimit > bnRewardCoinYearLimit * bnRewardCoinYearLimit * bnRewardCoinYearLimit * bnRewardCoinYearLimit * bnTarget)
-                bnUpperBound = bnMidValue;
-            else
-                bnLowerBound = bnMidValue;
-        }
-
-        nRewardCoinYear = bnUpperBound.getuint64();
-        if (nTime > ROUND_SWITCH_TIME)
-            nRewardCoinYear = min(nRewardCoinYear, MAX_MINT_PROOF_OF_STAKE);
+        CBigNum bnMidValue = (bnLowerBound + bnUpperBound) / 2;
+        if (fDebug && GetBoolArg("-printcreation"))
+            printf("GetProofOfStakeReward() : lower=%"PRI64d" upper=%"PRI64d" mid=%"PRI64d"\n", bnLowerBound.getuint64(), bnUpperBound.getuint64(), bnMidValue.getuint64());
+        if (bnMidValue * bnMidValue * bnMidValue * bnMidValue * bnTargetLimit > bnRewardCoinYearLimit * bnRewardCoinYearLimit * bnRewardCoinYearLimit * bnRewardCoinYearLimit * bnTarget)
+            bnUpperBound = bnMidValue;
         else
-            nRewardCoinYear = min((nRewardCoinYear / CENT) * CENT, MAX_MINT_PROOF_OF_STAKE);
+            bnLowerBound = bnMidValue;
     }
-    else
-    {
-        // Old creation amount per coin-year, 5% fixed stake mint rate
-        nRewardCoinYear = 0.015 * CENT;
-    }
+    nRewardCoinYear = bnUpperBound.getuint64();
+    nRewardCoinYear = min(nRewardCoinYear, MAX_MINT_PROOF_OF_STAKE);
+
 
     int64 nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
-    if (nTime > ROUND_SWITCH_TIME)
-        nSubsidy = (nCoinAge * 33 * nRewardCoinYear) / (365 * 33 + 8) ;
-    else
-        nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRI64d" nBits=%d\n", FormatMoney(nSubsidy).c_str(), nCoinAge, nBits);
+
     return nSubsidy;
 }
 
@@ -1670,6 +1657,17 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
             return error("ConnectBlock() : UpdateTxIndex failed");
     }
 
+
+    uint256 prevHash = 0;
+    if(pindex->pprev)
+    {
+        prevHash = pindex->pprev->GetBlockHash();
+        if (vtx[0].GetValueOut() > GetProofOfWorkReward(pindex->nHeight, nFees, prevHash))
+            return false;
+    }
+
+
+
     // Update block index on disk without changing it in memory.
     // The memory index structure will be changed after the db commits.
     if (pindex->pprev)
@@ -2121,19 +2119,12 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot) const
         return DoS(50, error("CheckBlock() : coinstake timestamp violation nTimeBlock=%"PRI64d" nTimeTx=%u", GetBlockTime(), vtx[1].nTime));
 
     // Check coinbase reward
-    int64 nTimeBlock = GetBlockTime();
-    if (nTimeBlock < REWARD_SWITCH_TIME) {
 
-        if (vtx[0].GetValueOut() > (IsProofOfWork()? MAX_MINT_PROOF_OF_WORK_LEGACY : 0))
-            return DoS(50, error("CheckBlock() : coinbase reward exceeded %s > %s",
-                                 FormatMoney(vtx[0].GetValueOut()).c_str(),
-                       FormatMoney(IsProofOfWork()? GetProofOfWorkReward(nBits) : 0).c_str()));
-    } else {
-        if (vtx[0].GetValueOut() > (IsProofOfWork()? (GetProofOfWorkReward(nBits) - vtx[0].GetMinFee() + MIN_TX_FEE) : 0))
-            return DoS(50, error("CheckBlock() : coinbase reward exceeded %s > %s",
-                                 FormatMoney(vtx[0].GetValueOut()).c_str(),
-                       FormatMoney(IsProofOfWork()? GetProofOfWorkReward(nBits) : 0).c_str()));
-    }
+    if (vtx[0].GetValueOut() > (IsProofOfWork()? (GetProofOfWorkReward(0, 0, 0) - vtx[0].GetMinFee() + MIN_TX_FEE) : 0))
+        return DoS(50, error("CheckBlock() : coinbase reward exceeded %s > %s",
+                             FormatMoney(vtx[0].GetValueOut()).c_str(),
+                   FormatMoney(IsProofOfWork()? GetProofOfWorkReward(0, 0, 0) : 0).c_str()));
+
 
     // Check transactions
     BOOST_FOREACH(const CTransaction& tx, vtx)
@@ -4257,11 +4248,8 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake)
             printf("CreateNewBlock(): total size %"PRI64u"\n", nBlockSize);
 
         if (pblock->IsProofOfWork())
-        {
-            //pblock->
-            pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pblock->nBits);
-            //printf("Proof of Work Coins generated in pblock->nBits %d  is : %d \n",pblock->nBits,pblock->vtx[0].vout[0].nValue);
-        }
+            pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(pindexPrev->nHeight+1, nFees, pindexPrev->GetBlockHash());
+
 
         // Fill in header
         pblock->hashPrevBlock  = pindexPrev->GetBlockHash();

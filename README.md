@@ -1,10 +1,7 @@
 [ANN][CMC]CosmosCoin-PoW/PoS |Transaction Comment|Fair start|0 Premine
 
-Update Version [1.5]
-1 add network hash speed output in Debug->console (type 'getmininginfo' you can get the network hash speed)
-2 transaction fee is zero - This wouldn't effect the previous transactions
-3 add Chinese Translation to CosmosCoin Client
-4 Other little bugs fixed
+Version [1.9.1]
+
 
 Verions 1.5 Windows Download Address:
 .7z file:
