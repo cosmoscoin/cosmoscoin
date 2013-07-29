@@ -1,6 +1,6 @@
 [ANN][CMC]CosmosCoin-PoW/PoS |Transaction Comment|Fair start|0 Premine
 
-Version [1.9.1]
+Version [1.9.0]
 
 
 Verions 1.5 Windows Download Address:
